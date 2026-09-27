@@ -1,257 +1,99 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>ALIE Basic Demo - Free → Basic</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ALIE Store Demo — Free → Basic</title>
 <style>
-*{box-sizing:border-box}
-:root{
-  --bg:#f5f6f8;--card:#fff;--text:#17191c;--muted:#69707a;--line:#e5e8ec;
-  --soft:#f7f8fa;--green:#147a43;--greenbg:#edf8f1;--dark:#15171a;
-}
-body{
-  margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
-  background:var(--bg);color:var(--text);
-}
-button,textarea{font:inherit}
-.app{max-width:760px;margin:0 auto;min-height:100vh;background:#fff}
-header{
-  position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);padding:13px 16px;
-}
-.topline{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.brand{font-size:17px;font-weight:900}
-.badge{font-size:12px;padding:6px 9px;border-radius:999px;background:#eef1f4}
-main{padding:15px}
-.card{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:16px}
-.hero h1{font-size:22px;margin:0 0 5px}
-.hero p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
-.status{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
-.pill{font-size:11px;padding:6px 9px;border-radius:999px;background:#f0f2f4}
-.pill.ok{background:var(--greenbg);color:var(--green)}
-.section-title{font-size:16px;font-weight:900;margin:22px 2px 9px}
-.free-listing{background:#fafafa}
-.free-listing .eyebrow{font-size:11px;color:#888;font-weight:800;margin-bottom:7px}
-.free-listing h2{font-size:19px;margin:0 0 7px}
-.free-listing p{font-size:13px;line-height:1.65;color:#666;margin:0}
-.free-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
-.info{border-top:1px solid #eceef1;padding-top:10px;font-size:12px;color:#5e646b}
-.upgrade{
-  margin-top:15px;border:1px solid #d9dde3;border-radius:20px;padding:17px;background:#fff;
-  box-shadow:0 8px 26px rgba(23,25,28,.05)
-}
-.upgrade h2{font-size:22px;line-height:1.3;margin:0 0 6px}
-.price{font-size:14px;color:#4e545b;margin-bottom:13px}
-.value{
-  padding:13px 14px;border-radius:15px;background:#f7f8fa;font-size:13px;line-height:1.7;color:#4e545b;
-}
-.value strong{display:block;color:#1c2024;margin-bottom:3px}
-.label{font-size:13px;font-weight:800;margin:15px 0 7px}
-textarea{
-  width:100%;min-height:84px;border:1px solid #ccd2d8;border-radius:14px;padding:12px;background:#fff;resize:vertical
-}
-.photo{
-  margin-top:10px;min-height:116px;border:1px dashed #cfd5db;border-radius:14px;background:#fafbfc;
-  display:grid;place-items:center;text-align:center;padding:13px;color:#777;font-size:12px;line-height:1.6
-}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
-button{border:0;border-radius:12px;padding:11px 14px;font-weight:850;cursor:pointer}
-.primary{background:var(--dark);color:#fff}
-.secondary{background:#eef1f4;color:#1d2227}
-button:disabled{opacity:.45;cursor:not-allowed}
-.preview-stage{display:none;margin-top:17px}
-.preview-stage.visible{display:block}
-.stepnote{
-  font-size:12px;line-height:1.6;color:#626971;padding:10px 12px;border-radius:12px;background:#f6f7f9;margin-bottom:11px
-}
-.article{border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.article-head{padding:10px 13px;background:#f7f8fa;border-bottom:1px solid var(--line);font-size:12px;font-weight:850}
-.article-body{padding:15px}
-.article-body h3{font-size:21px;line-height:1.35;margin:0 0 9px}
-.article-body p{font-size:14px;line-height:1.8;color:#43494f;margin:0 0 11px}
-.article-meta{font-size:11px;color:#7a8087}
-.store-after{margin-top:13px;border:1px solid var(--line);border-radius:18px;padding:14px}
-.store-after h3{font-size:17px;margin:0 0 9px}
-.recommend{border-radius:14px;background:#f7f8fa;padding:12px}
-.recommend small{display:block;font-size:10px;color:#777;font-weight:800;margin-bottom:4px}
-.recommend strong{display:block;font-size:15px;margin-bottom:3px}
-.recommend a{font-size:12px;color:#111;font-weight:800;text-decoration:underline}
-.cta{margin-top:12px;padding:12px;border-radius:14px;background:#f3f5f7;font-size:12px;line-height:1.65}
-.counter{
-  margin-top:13px;display:flex;align-items:center;justify-content:space-between;gap:10px;
-  border-top:1px solid #eceef1;padding-top:13px;font-size:12px;color:#5e646b
-}
-.counter strong{font-size:13px;color:#1c2024}
-.result{font-size:12px;line-height:1.6;color:#666;margin-top:11px}
-.result.success{color:var(--green);font-weight:800}
-.plus-tease{margin-top:18px;background:#fcfcfd}
-.plus-tease h3{font-size:15px;margin:0 0 5px}
-.plus-tease p{font-size:12px;color:#676d74;line-height:1.65;margin:0}
-@media(max-width:520px){
-  main{padding:12px}
-  .card,.upgrade{padding:14px}
-  .free-grid{grid-template-columns:1fr}
-  .actions button{flex:1 1 100%}
-  .counter{align-items:flex-start;flex-direction:column}
-}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f4f5f7;color:#17191c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif}.app{max-width:760px;margin:0 auto;min-height:100vh;background:#fff}.top{position:sticky;top:0;z-index:30;padding:12px 14px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #e8eaee}.toprow{display:flex;align-items:center;justify-content:space-between;gap:10px}.logo{font-weight:900;letter-spacing:.02em}.step{font-size:11px;font-weight:800;padding:6px 9px;border-radius:999px;background:#f0f2f5;color:#4f565e}main{padding:14px}.hero{padding:18px 4px 12px}.hero .eyebrow{font-size:11px;font-weight:900;letter-spacing:.12em;color:#858b92}.hero h1{margin:7px 0 6px;font-size:25px;line-height:1.28}.hero p{margin:0;color:#666d74;font-size:13px;line-height:1.7}.planrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.plan{border:1px solid #e3e6ea;border-radius:15px;padding:11px;background:#fff}.plan.active{border-color:#15171a;box-shadow:0 0 0 1px #15171a}.plan .name{font-size:12px;font-weight:900}.plan .price{font-size:17px;font-weight:900;margin:3px 0}.plan .desc{font-size:10px;color:#71777e;line-height:1.45}.section-label{margin:22px 2px 9px;font-size:12px;font-weight:900;letter-spacing:.08em;color:#7a8087}.card{border:1px solid #e3e6ea;border-radius:20px;background:#fff;overflow:hidden}.free-head{padding:13px 15px;background:#f7f8f9;border-bottom:1px solid #e7e9ed;display:flex;justify-content:space-between;align-items:center;gap:8px}.free-head strong{font-size:13px}.badge{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#eceff2;color:#5f666d}.shop{padding:16px}.shop h2{margin:0 0 6px;font-size:20px}.shop .basicinfo{font-size:12px;color:#72787f;line-height:1.7}.plain-article{margin-top:14px;border-top:1px solid #eceef1;padding-top:14px}.plain-article small{display:block;font-size:10px;color:#8a9096;font-weight:800;margin-bottom:5px}.plain-article h3{margin:0 0 6px;font-size:16px;line-height:1.45}.plain-article p{margin:0;color:#6b7178;font-size:12px;line-height:1.7}.gap{margin-top:12px;padding:12px;border-radius:14px;background:#f6f7f8;font-size:12px;line-height:1.65;color:#5d646b}.gap strong{color:#17191c}.upgrade{margin-top:14px;border:1px solid #d7dbe0;border-radius:22px;background:#fff;padding:17px;box-shadow:0 10px 28px rgba(20,23,26,.06)}.upgrade .kicker{font-size:11px;font-weight:900;color:#727980;letter-spacing:.08em}.upgrade h2{font-size:23px;line-height:1.35;margin:7px 0 7px}.upgrade .lead{font-size:13px;color:#60676e;line-height:1.7;margin:0}.valuebox{margin-top:14px;padding:13px 14px;border-radius:15px;background:#f6f7f9}.valuebox strong{display:block;font-size:13px;margin-bottom:4px}.valuebox span{font-size:12px;line-height:1.65;color:#626971}.field{margin-top:15px}.field label{display:block;font-size:12px;font-weight:900;margin-bottom:7px}.field textarea{width:100%;min-height:86px;border:1px solid #ccd2d8;border-radius:14px;padding:12px;font:inherit;resize:vertical;background:#fff;color:#17191c}.photo{margin-top:10px;min-height:130px;border-radius:16px;background:linear-gradient(145deg,#e8d7ba,#f7efe2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}.bread{width:170px;height:72px;border-radius:55% 45% 50% 50%;background:linear-gradient(180deg,#c98b45,#e7b76e);box-shadow:0 12px 24px rgba(100,66,29,.16);position:relative}.bread:before,.bread:after{content:"";position:absolute;top:17px;width:38px;height:7px;border-radius:50%;background:rgba(255,238,205,.65);transform:rotate(-22deg)}.bread:before{left:38px}.bread:after{left:92px}.photo-note{position:absolute;left:10px;bottom:9px;font-size:10px;font-weight:800;padding:5px 7px;border-radius:9px;background:rgba(255,255,255,.82)}.actions{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}button{appearance:none;border:0;border-radius:13px;padding:12px 14px;font:inherit;font-weight:900;cursor:pointer}.primary{background:#15171a;color:#fff}.secondary{background:#eef1f4;color:#1c2228}.ghost{background:#fff;border:1px solid #d8dde2;color:#33393f}.actions button{flex:1}.preview{display:none;margin-top:18px}.preview.show{display:block}.preview-note{padding:10px 12px;border-radius:13px;background:#f4f6f8;font-size:11px;line-height:1.6;color:#5f666d;margin-bottom:10px}.preview-note strong{color:#17191c}.article{border:1px solid #e2e5e9;border-radius:19px;overflow:hidden}.article-cover{height:160px;background:linear-gradient(145deg,#e7d2af,#f7eee0);display:flex;align-items:center;justify-content:center;position:relative}.article-cover .bread{transform:scale(1.18)}.article-body{padding:16px}.article-body .overline{font-size:10px;font-weight:900;color:#7d8389;letter-spacing:.08em}.article-body h3{font-size:22px;line-height:1.35;margin:7px 0 9px}.article-body p{font-size:13px;line-height:1.8;color:#444b52;margin:0 0 10px}.meta{font-size:10px;color:#83898f}.store-update{margin-top:11px;border:1px solid #e2e5e9;border-radius:17px;padding:13px}.store-update .title{font-size:12px;font-weight:900;margin-bottom:8px}.recommend{background:#f6f7f9;border-radius:13px;padding:11px}.recommend small{font-size:9px;font-weight:900;color:#858b92}.recommend strong{display:block;font-size:14px;margin:3px 0}.recommend span{font-size:11px;color:#5f666d}.usage{margin-top:12px;border-top:1px solid #eceef1;padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px}.usage strong{font-size:14px}.usage small{display:block;margin-top:2px;color:#747b82;font-size:10px}.publish-result{margin-top:10px;font-size:11px;line-height:1.6;color:#636a71}.publish-result.ok{color:#147a43;font-weight:900}.plus{margin-top:18px;border:1px solid #e2e5e9;border-radius:19px;padding:15px;background:#fbfbfc}.plus .mini{font-size:10px;font-weight:900;letter-spacing:.08em;color:#7a8187}.plus h3{margin:6px 0 5px;font-size:17px}.plus p{margin:0;font-size:12px;line-height:1.65;color:#626970}.plus .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.plus .tags span{font-size:10px;padding:6px 8px;border-radius:999px;background:#eef1f4;font-weight:800}.foot{padding:18px 2px 28px;text-align:center;font-size:10px;color:#90969c}@media(max-width:520px){main{padding:12px}.planrow{grid-template-columns:1fr}.plan{display:grid;grid-template-columns:72px 80px 1fr;align-items:center}.plan .price{margin:0;font-size:15px}.upgrade{padding:14px}.actions{flex-direction:column}.usage{align-items:flex-start;flex-direction:column}.usage button{width:100%}}
 </style>
 </head>
 <body>
 <div class="app">
-<header>
-  <div class="topline">
-    <div class="brand">Aifate / ALIE</div>
-    <div class="badge">Free → Basic デモ</div>
-  </div>
-</header>
-
+<header class="top"><div class="toprow"><div class="logo">Aifate / ALIE</div><div class="step">DEMO 1 · Free → Basic</div></div></header>
 <main>
-  <section class="card hero">
-    <h1>焼きたてパン工房 GALLO</h1>
-    <p>Freeで「載っている店」から、Basicで「今売りたいものを動かせる店」へ変わる体験だけを見せるデモです。</p>
-    <div class="status">
-      <span class="pill ok">Twinow：無料掲載中</span>
-      <span class="pill" id="planPill">Basic：未加入</span>
-    </div>
-  </section>
+<section class="hero">
+  <div class="eyebrow">STORE EXPERIENCE</div>
+  <h1>焼きたてパン工房 GALLO</h1>
+  <p>いまの無料掲載から、「今売りたいもの」を動かせるBasicへ。店主が体感する差だけを、ひとつずつ見せます。</p>
+  <div class="planrow">
+    <div class="plan"><div class="name">Free</div><div class="price">0円</div><div class="desc">まず正しく載る。基本情報と来店導線。</div></div>
+    <div class="plan active"><div class="name">Basic</div><div class="price">1,500円</div><div class="desc">月1回、今売りたいものをALIEが販促に変える。</div></div>
+    <div class="plan"><div class="name">Plus</div><div class="price">3,500円</div><div class="desc">月5回＋Twinow内に店の専用ページを持つ。</div></div>
+  </div>
+</section>
 
-  <div class="section-title">Freeの状態</div>
-  <section class="card free-listing">
-    <div class="eyebrow">Twinow 無料掲載</div>
+<div class="section-label">BEFORE · FREE</div>
+<section class="card">
+  <div class="free-head"><strong>現在のTwinow掲載</strong><span class="badge">Free</span></div>
+  <div class="shop">
     <h2>焼きたてパン工房 GALLO</h2>
-    <p>店舗名・住所・営業時間など、来店判断に必要な基本情報を掲載。Freeでは、まず「正しく見つかる」状態をつくります。</p>
-    <div class="free-grid">
-      <div class="info">営業時間などの基本情報</div>
-      <div class="info">地図・来店導線</div>
+    <div class="basicinfo">店舗の基本情報・営業時間・場所など、来店判断に必要な情報を掲載。</div>
+    <div class="plain-article">
+      <small>店舗紹介</small>
+      <h3>焼きたてパン工房 GALLOのご紹介</h3>
+      <p>お店の基本情報やパンづくりについて紹介しています。詳しい情報は店舗ページから確認できます。</p>
     </div>
-  </section>
+    <div class="gap"><strong>Freeでできていること：</strong>「店を知る」土台はある。<br>ただし、「来週この商品を買いに行きたい」という理由までは、まだ作っていない。</div>
+  </div>
+</section>
 
-  <section class="upgrade">
-    <h2>Basicにすると、今月売りたいものをALIEが販促に変える。</h2>
-    <div class="price">Basic 月額 1,500円 ／ 月1回の販促公開</div>
+<section class="upgrade" id="basic">
+  <div class="kicker">BASIC · MONTHLY PROMOTION</div>
+  <h2>店主は、一言伝えるだけ。</h2>
+  <p class="lead">ALIEが店舗の文脈とつなぎ、何度も作り直す前提ではなく、そのまま公開できる完成稿まで整えます。</p>
+  <div class="valuebox"><strong>Basic 月額1,500円 · 月1回</strong><span>プレビューでは回数を消費しません。店主が最終確認し、公開が成功した時点で1回消費します。</span></div>
 
-    <div class="value">
-      <strong>基本は、一発で公開できる完成稿。</strong>
-      何度も作り直すことを前提にせず、ALIEが店舗情報と店主の一言を使って「この内容でいい」と思える販促記事まで整えます。
-    </div>
-
-    <div class="label">店主からALIEへ</div>
+  <div class="field">
+    <label for="message">ALIEへ伝える</label>
     <textarea id="message">来週、新しい塩パンを出します。北海道産小麦を使っています。</textarea>
+  </div>
+  <div class="photo"><div class="bread"></div><div class="photo-note">商品写真 1枚を想定</div></div>
+  <div class="actions"><button class="primary" id="make">ALIEに作ってもらう</button><button class="ghost" id="reset">最初から見る</button></div>
 
-    <div class="photo">
-      <div><strong>商品写真 1枚</strong><br>実装時は商品写真を使って販促記事のビジュアルを作ります。</div>
-    </div>
-
-    <div class="actions">
-      <button class="primary" id="run">ALIEに作ってもらう</button>
-      <button class="secondary" id="reset">最初から見る</button>
-    </div>
-
-    <div class="preview-stage" id="previewStage">
-      <div class="stepnote">
-        ここは「何度も生成する画面」ではなく最終確認。プレビューだけでは月1回の枠は消費しません。
+  <div class="preview" id="preview">
+    <div class="preview-note"><strong>ALIEの提案は最終確認から始まります。</strong><br>「何度もプレビューさせる」ことを価値にせず、まず一発で公開できる品質を狙います。</div>
+    <article class="article">
+      <div class="article-cover"><div class="bread"></div></div>
+      <div class="article-body">
+        <div class="overline">TWINOW · 今週のおすすめ</div>
+        <h3 id="headline">来週から。焼きたてを狙って行きたい、GALLOの新しい塩パン。</h3>
+        <p id="lead">来週、GALLOに新しい塩パンが登場。北海道産小麦を使い、焼きたてで届ける新商品です。「今日は何を買おう？」と迷った日に、立ち寄る理由になる一品として紹介します。</p>
+        <p>店舗の基本情報だけで終わらず、「今行く理由」までひとつの記事に。記事から営業時間や場所を確認し、そのまま店舗ページへ戻れます。</p>
+        <div class="meta">店舗情報と接続済み · 公開前 · Basic販促枠</div>
       </div>
+    </article>
 
-      <article class="article">
-        <div class="article-head">Twinow 販促記事・公開前プレビュー</div>
-        <div class="article-body">
-          <h3 id="articleTitle">来週から。GALLOの新しい塩パン</h3>
-          <p id="articleLead">焼きたてパン工房GALLOに、来週から新しい塩パンが登場予定です。北海道産小麦を使った新商品。気になる方は、店頭で焼き上がりをチェックしてみてください。</p>
-          <p>店舗の基本情報だけでは伝わらなかった「今行く理由」を、ALIEがひとつの販促記事として整えます。</p>
-          <div class="article-meta">店舗情報と接続済み ／ 公開前 ／ Basic販促枠</div>
-
-          <div class="cta">
-            <strong>記事から店舗へ戻るCTA</strong><br>
-            「営業時間・場所を確認する」→ GALLOのTwinow店舗ページ
-          </div>
-        </div>
-      </article>
-
-      <section class="store-after">
-        <h3>店舗ページ側にも反映</h3>
-        <div class="recommend">
-          <small>今月のおすすめ</small>
-          <strong>来週から。GALLOの新しい塩パン</strong>
-          <a href="javascript:void(0)">販促記事を見る →</a>
-        </div>
-      </section>
-
-      <div class="counter">
-        <div><strong id="remaining">今月あと1回</strong><br>公開が成功した時点で1回消費</div>
-        <button class="primary" id="publish">この内容で公開する</button>
-      </div>
-
-      <div class="result" id="result">プレビュー確認中。まだ回数は消費していません。</div>
+    <div class="store-update">
+      <div class="title">店舗ページにも同時に「今月のおすすめ」が出る</div>
+      <div class="recommend"><small>今月のおすすめ</small><strong id="storeTitle">来週から。GALLOの新しい塩パン</strong><span>販促記事を見る →</span></div>
     </div>
-  </section>
 
-  <section class="card plus-tease">
-    <h3>さらに「店そのもの」を育てたくなったら Plusへ</h3>
-    <p>Plusでは販促回数だけでなく、Twinow内の専用店舗ページ自体を店のメディアとして育てる体験につなげます。これは次のデモで扱います。</p>
-  </section>
+    <div class="actions"><button class="secondary" id="edit">必要なところだけALIEに直してもらう</button></div>
+    <div class="usage">
+      <div><strong id="remaining">今月あと1回</strong><small>まだプレビューなので消費していません</small></div>
+      <button class="primary" id="publish">この内容で公開する</button>
+    </div>
+    <div class="publish-result" id="result">内容を確認して、そのまま公開できます。</div>
+  </div>
+</section>
+
+<section class="plus">
+  <div class="mini">NEXT · PLUS</div>
+  <h3>毎週発信したい。店そのものも育てたい。</h3>
+  <p>そこから先はPlus。回数が増えるだけではなく、Twinow内に自分の店の専用ページを持ち、「簡単なホームページならここでいい」と思えるところまで育てる。次のデモはここを見せます。</p>
+  <div class="tags"><span>月5回</span><span>Twinow内専用ページ</span><span>店舗ページを育てる</span></div>
+</section>
+
+<div class="foot">Aifate / ALIE Store Plan Demo · Free → Basic</div>
 </main>
 </div>
-
 <script>
-const run = document.getElementById('run');
-const reset = document.getElementById('reset');
-const previewStage = document.getElementById('previewStage');
-const msg = document.getElementById('message');
-const publish = document.getElementById('publish');
-const result = document.getElementById('result');
-const remaining = document.getElementById('remaining');
-const planPill = document.getElementById('planPill');
-
-let published = false;
-
-run.addEventListener('click', () => {
-  const text = msg.value.trim();
-  const hasSalt = text.includes('塩パン');
-  const hasHokkaido = text.includes('北海道産');
-
-  document.getElementById('articleTitle').textContent = hasSalt
-    ? '来週から。GALLOの新しい塩パン'
-    : 'GALLOから、来週の新商品';
-
-  document.getElementById('articleLead').textContent =
-    '焼きたてパン工房GALLOに、来週から新商品が登場予定です。' +
-    (hasHokkaido ? '北海道産小麦を使った商品。' : '') +
-    '店舗の基本情報だけでは伝わらない「今行く理由」まで、ALIEが販促記事として整えます。';
-
-  previewStage.classList.add('visible');
-  result.className = 'result';
-  result.textContent = published
-    ? '今月の販促枠は公開済みです。'
-    : 'プレビュー確認中。まだ回数は消費していません。';
-  previewStage.scrollIntoView({behavior:'smooth', block:'start'});
-});
-
-publish.addEventListener('click', () => {
-  if (published) return;
-  published = true;
-  planPill.textContent = 'Basic：利用中';
-  planPill.classList.add('ok');
-  remaining.textContent = '今月あと0回';
-  publish.textContent = '公開済み';
-  publish.disabled = true;
-  result.className = 'result success';
-  result.textContent = '公開成功。ここで初めて今月の販促枠を1回消費しました。';
-});
-
-reset.addEventListener('click', () => {
-  published = false;
-  msg.value = '来週、新しい塩パンを出します。北海道産小麦を使っています。';
-  previewStage.classList.remove('visible');
-  planPill.textContent = 'Basic：未加入';
-  planPill.classList.remove('ok');
-  remaining.textContent = '今月あと1回';
-  publish.textContent = 'この内容で公開する';
-  publish.disabled = false;
-  result.className = 'result';
-  result.textContent = 'プレビュー確認中。まだ回数は消費していません。';
-  window.scrollTo({top:0,behavior:'smooth'});
-});
+const q=id=>document.getElementById(id);const message=q('message'),preview=q('preview'),make=q('make'),reset=q('reset'),publish=q('publish'),edit=q('edit'),remaining=q('remaining'),result=q('result'),headline=q('headline'),lead=q('lead'),storeTitle=q('storeTitle');let published=false;
+make.addEventListener('click',()=>{const t=message.value.trim();const salt=t.includes('塩パン');const hokkaido=t.includes('北海道産');headline.textContent=salt?'来週から。焼きたてを狙って行きたい、GALLOの新しい塩パン。':'来週から。GALLOに新しいおすすめが登場。';lead.textContent='来週、GALLOに新しい商品が登場。'+(hokkaido?'北海道産小麦を使い、':'')+'「今日は何を買おう？」と迷った日に、立ち寄る理由になる一品としてALIEが紹介します。';storeTitle.textContent=salt?'来週から。GALLOの新しい塩パン':'来週から。GALLOの新しいおすすめ';preview.classList.add('show');result.className='publish-result';result.textContent=published?'今月分は公開済みです。':'内容を確認して、そのまま公開できます。';preview.scrollIntoView({behavior:'smooth',block:'start'});});
+edit.addEventListener('click',()=>{message.focus();result.className='publish-result';result.textContent='修正したい点だけ上の欄に追記して、もう一度ALIEに作ってもらえます。プレビューでは回数は減りません。';window.scrollTo({top:message.getBoundingClientRect().top+window.scrollY-95,behavior:'smooth'});});
+publish.addEventListener('click',()=>{if(published)return;published=true;remaining.textContent='今月あと0回';publish.textContent='公開済み';publish.disabled=true;result.className='publish-result ok';result.textContent='公開成功。ここで初めてBasicの月1回を消費しました。店舗ページの「今月のおすすめ」にも反映済みです。';});
+reset.addEventListener('click',()=>{published=false;message.value='来週、新しい塩パンを出します。北海道産小麦を使っています。';preview.classList.remove('show');remaining.textContent='今月あと1回';publish.textContent='この内容で公開する';publish.disabled=false;result.className='publish-result';result.textContent='内容を確認して、そのまま公開できます。';window.scrollTo({top:0,behavior:'smooth'});});
 </script>
 </body>
 </html>
