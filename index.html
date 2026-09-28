@@ -3,133 +3,413 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>GALLO × Twinow / Free → Basic Demo</title>
+<meta name="theme-color" content="#fffdf7">
+<title>GALLO × Twinow｜Free → Business 体験デモ</title>
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff7fa;color:#302831;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif}button,input,textarea{font:inherit}.app{max-width:1120px;margin:0 auto;min-height:100vh;background:#fff}.topbar{position:sticky;top:0;z-index:50;background:#e9487b;color:#fff;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 3px 14px rgba(93,32,55,.13)}.brand{display:flex;align-items:center;gap:12px;font-weight:900}.brand img{width:145px;max-height:48px;object-fit:contain}.demo-badge{font-size:12px;padding:7px 10px;border:1px solid rgba(255,255,255,.45);border-radius:999px;white-space:nowrap}.nav{position:sticky;top:70px;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #efdde4;display:grid;grid-template-columns:1fr 1fr;padding:10px 14px;gap:9px}.nav button{border:0;border-radius:999px;padding:11px 12px;font-weight:900;background:#f7edf1;color:#87576a;cursor:pointer}.nav button.on{background:#e9487b;color:#fff}.screen{display:none}.screen.on{display:block}.article-shell{padding:32px 26px 50px}.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:34px;align-items:start}.article-main{min-width:0}.hero-image{width:100%;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#f1e4df}.hero-image img,.article-photo img,.shop-product img,.upload-preview img{width:100%;height:100%;object-fit:cover;display:block}.title{font-size:34px;line-height:1.32;margin:20px 0 12px;letter-spacing:.01em}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:17px}.tag{font-size:12px;padding:7px 10px;border-radius:999px;background:#edf6f1;color:#587568}.lead{font-size:15px;line-height:2;color:#665a60}.toc{margin:22px 0 30px;padding:18px 20px;border-radius:14px;background:#fff8fa;border:1px solid #f0dce4}.toc b{display:block;margin-bottom:9px}.toc ul{margin:0;padding-left:20px;line-height:1.9;font-size:14px}.section-title{font-size:25px;margin:34px 0 13px}.article-main p{font-size:15px;line-height:2;color:#5d5358}.article-main ul{line-height:1.9;color:#5d5358}.article-photo{aspect-ratio:16/8.8;border-radius:18px;overflow:hidden;margin:24px 0 8px;background:#f3e6df}.caption{font-size:12px!important;color:#8b7a82!important;margin-top:6px!important}.review-line{margin:24px 0;padding:16px 18px;border-left:4px solid #e9487b;background:#fff2f6;border-radius:0 14px 14px 0;display:flex;gap:13px;align-items:center}.avatar{width:68px;height:68px;border-radius:50%;overflow:hidden;flex:none;background:#efe6ea;display:grid;place-items:center;font-weight:900;color:#a24e6d}.avatar img{width:100%;height:100%;object-fit:cover}.review-line strong{display:block;margin-bottom:5px}.share{margin-top:28px;padding:16px;border:1px solid #eedce3;border-radius:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.share b{margin-right:5px}.share span{font-size:12px;background:#b62d5d;color:#fff;padding:9px 12px;border-radius:999px}.next-step{margin-top:18px;padding:18px;border:1px solid #dce9e4;border-radius:16px;background:#f5faf8}.next-step h3{margin:0 0 7px;font-size:17px}.next-step p{margin:0 0 12px;font-size:13px;line-height:1.7}.next-buttons{display:flex;flex-wrap:wrap;gap:8px}.next-buttons button{border:1px solid #78aa98;background:#fff;color:#477b68;border-radius:10px;padding:9px 11px}.aside{position:sticky;top:142px}.ad-card{border-radius:20px;padding:16px;background:#eff8f4;border:1px solid #deeee8}.ad-card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px}.ad-card small{color:#82978f}.ad-card h3{font-size:18px;margin:11px 0 7px}.ad-card p{font-size:13px;line-height:1.7;color:#5c6d66}.basic-cta{margin-top:18px;border:0;width:100%;border-radius:14px;padding:14px 12px;background:#e9487b;color:#fff;font-weight:900;cursor:pointer}.experience{max-width:900px;margin:0 auto;padding:28px 18px 60px}.experience h1{font-size:30px;margin:0 0 8px}.sub{margin:0 0 22px;color:#776a70;line-height:1.8}.flowbar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}.flowbar div{padding:11px 8px;text-align:center;border-radius:12px;background:#f5eef1;font-size:12px;font-weight:800;color:#8a6674}.flowbar div.active{background:#e9487b;color:#fff}.panel{border:1px solid #eadde2;border-radius:20px;padding:18px;background:#fff;margin-top:14px;box-shadow:0 8px 30px rgba(74,41,54,.05)}.panel h2{font-size:20px;margin:0 0 5px}.panel-intro{font-size:13px;color:#74676d;line-height:1.7;margin:0 0 15px}.input-grid{display:grid;grid-template-columns:260px 1fr;gap:16px}.upload{position:relative;border:1px dashed #d7bcc7;border-radius:16px;overflow:hidden;background:#fff8fa;min-height:220px;cursor:pointer}.upload-preview{height:100%;min-height:220px}.upload-label{position:absolute;left:10px;bottom:10px;background:rgba(25,20,22,.82);color:#fff;padding:7px 9px;border-radius:9px;font-size:11px;font-weight:800}.upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}.field label{display:block;font-size:12px;font-weight:900;margin:0 0 6px;color:#644f58}.field textarea,.field input{width:100%;border:1px solid #d9cbd1;border-radius:13px;padding:12px;background:#fff;color:#302831}.field textarea{min-height:110px;resize:vertical;line-height:1.7}.hint{font-size:11px;color:#93858b;margin-top:6px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.primary,.secondary{border:0;border-radius:12px;padding:12px 15px;font-weight:900;cursor:pointer}.primary{background:#242126;color:#fff}.secondary{background:#f2ecef;color:#5f5057}.questions{display:none}.questions.show{display:block}.alie{display:flex;gap:12px;align-items:flex-start;margin:12px 0 16px}.alie img{width:58px;height:58px;border-radius:50%;object-fit:cover;background:#eee}.alie-bubble{background:#f6f2f4;border-radius:4px 15px 15px 15px;padding:12px 14px;line-height:1.7;font-size:13px;flex:1}.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.qitem label{display:block;font-size:12px;font-weight:900;margin-bottom:5px}.qitem input{width:100%;padding:11px;border:1px solid #d9cbd1;border-radius:11px}.preview-wrap{display:none}.preview-wrap.show{display:block}.preview-headline{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:30px 0 12px}.preview-headline h2{margin:0;font-size:23px}.state{font-size:11px;padding:7px 9px;border-radius:999px;background:#fff0f4;color:#b42d5d;font-weight:900}.reviewmo-picker{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px}.person{min-width:94px;border:1px solid #eadce2;background:#fff;border-radius:14px;padding:9px;cursor:pointer;text-align:center}.person.on{border-color:#e9487b;box-shadow:0 0 0 2px #ffe2eb}.person .person-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#f3e7eb;margin:0 auto 6px;display:grid;place-items:center;font-weight:900;color:#9e4b69}.person img{width:100%;height:100%;object-fit:cover}.person b{display:block;font-size:12px}.person small{font-size:10px;color:#8c7b82}.preview-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0 13px}.preview-tabs button{border:0;padding:10px;border-radius:999px;background:#f2ecef;color:#765e68;font-weight:900;cursor:pointer}.preview-tabs button.on{background:#e9487b;color:#fff}.preview-pane{display:none}.preview-pane.on{display:block}.twinow-preview{border:1px solid #eddce3;border-radius:20px;overflow:hidden;background:#fff}.twinow-minihead{background:#e9487b;padding:11px 15px;color:#fff;font-weight:900}.twinow-content{padding:18px;max-width:760px;margin:0 auto}.twinow-content .hero-image{border-radius:14px}.twinow-content .title{font-size:28px}.twinow-content .section-title{font-size:22px}.store-preview{border:1px solid #eadde2;border-radius:20px;overflow:hidden;background:#fff}.store-top{padding:18px;background:#29242b;color:#fff}.store-top small{color:#dfcbd4}.store-top h2{margin:5px 0 3px}.campaign-banner{margin:16px;border:1px solid #f0c4d4;background:#fff6f9;border-radius:18px;padding:14px;display:grid;grid-template-columns:110px 1fr;gap:13px;align-items:center}.shop-product{width:110px;height:110px;border-radius:14px;overflow:hidden}.campaign-banner h3{margin:0 0 4px;font-size:18px}.campaign-banner p{margin:0;font-size:12px;line-height:1.65;color:#6d5d64}.store-article{margin:0 16px 18px;padding:16px;border-top:1px solid #eadde2}.store-article h3{font-size:22px;margin:0 0 9px}.store-article p{font-size:14px;line-height:1.8;color:#5d5358}.publishbox{margin-top:16px;border-top:1px solid #eadde2;padding-top:16px;display:flex;justify-content:space-between;gap:14px;align-items:center}.publishbox strong{display:block}.publish-result{font-size:12px;color:#796a70;margin-top:4px}.publish-result.ok{color:#187847;font-weight:900}.published-chip{display:none;margin-top:8px;color:#187847;font-size:12px;font-weight:900}.published-chip.show{display:block}.foot{padding:28px 18px;text-align:center;color:#9c8790;font-size:11px;background:#fff7fa}.hidden{display:none!important}@media(max-width:760px){.topbar{padding:9px 12px}.brand img{width:118px}.demo-badge{font-size:10px}.nav{top:62px}.article-shell{padding:18px 14px 40px}.article-layout{grid-template-columns:1fr}.aside{position:static}.title{font-size:27px}.section-title{font-size:22px}.ad-card{display:none}.input-grid{grid-template-columns:1fr}.upload{min-height:230px}.flowbar{grid-template-columns:1fr 1fr}.qgrid{grid-template-columns:1fr}.experience{padding:20px 12px 45px}.experience h1{font-size:25px}.panel{padding:14px}.preview-headline{align-items:flex-start;flex-direction:column}.publishbox{align-items:stretch;flex-direction:column}.publishbox .primary{width:100%}.campaign-banner{grid-template-columns:88px 1fr;margin:12px}.shop-product{width:88px;height:88px}.twinow-content{padding:14px}.twinow-content .title{font-size:24px}}
+:root{
+  --ink:#17352e;--muted:#64746f;--paper:#fffdf7;--card:#fff;--accent:#ee6f45;--leaf:#33866d;
+  --line:#dce5df;--shadow:0 16px 45px rgba(23,53,46,.09);--blue:#4b85ac;--purple:#7151a6;
+  --basic:#33866d;--plus:#ee6f45;--business:#7151a6;--free:#4b85ac
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.75}
+button,input,textarea{font:inherit}button{cursor:pointer}.site-wrap{width:min(1180px,calc(100% - 2rem));margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;text-decoration:none}.brand img{display:block;width:164px;height:auto}.header-meta{text-align:right}.header-meta strong{display:block;font-size:.78rem}.header-meta small{display:block;color:var(--muted);font-size:.7rem}
+.mobile-discovery-nav{display:flex;justify-content:center;gap:.5rem;padding:.55rem 1rem;border-bottom:1px solid var(--line);background:#fff}
+.mobile-discovery-nav span{min-height:36px;display:inline-flex;align-items:center;padding:.3rem .7rem;border-radius:999px;background:#f4f8f5;font-size:.78rem;font-weight:800}
+.demo-hero{padding:2.4rem 0 1.5rem;background:radial-gradient(circle at 90% 15%,#ffe4ce 0,transparent 36%),linear-gradient(135deg,#f3fff7,#fff8e8)}
+.eyebrow{margin:0 0 .35rem;color:var(--leaf);font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.demo-hero h1{margin:.2rem 0 .75rem;font-size:clamp(2rem,7vw,4.2rem);line-height:1.08;letter-spacing:-.035em}.demo-hero p{max-width:700px;margin:.4rem 0;color:var(--muted)}
+.store-pill{display:inline-flex;align-items:center;gap:.45rem;margin-top:1rem;padding:.5rem .8rem;border:1px solid #cfe0d8;border-radius:999px;background:#fff;font-size:.84rem;font-weight:800}.store-dot{width:9px;height:9px;border-radius:50%;background:var(--leaf)}
+.plan-rail-wrap{position:sticky;top:76px;z-index:45;background:rgba(255,253,247,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.plan-rail{display:flex;gap:.45rem;overflow-x:auto;padding:.65rem 0;scrollbar-width:none}.plan-rail::-webkit-scrollbar{display:none}
+.plan-tab{flex:0 0 auto;min-height:42px;border:1px solid var(--line);border-radius:999px;padding:.55rem .9rem;background:#fff;color:var(--ink);font-weight:900}
+.plan-tab.active{color:#fff;border-color:transparent}.plan-tab[data-stage="free"].active{background:var(--free)}.plan-tab[data-stage="basic"].active{background:var(--basic)}
+.plan-tab[data-stage="plus"].active{background:var(--plus)}.plan-tab[data-stage="business"].active{background:var(--business)}.plan-tab[data-stage="alie"].active{background:var(--ink)}
+.stage{display:none;padding:2rem 0 5rem}.stage.active{display:block}.stage-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.stage-kicker{font-size:.76rem;font-weight:900;letter-spacing:.08em}.stage h2{margin:.1rem 0 .35rem;font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.25}.stage-head p{max-width:720px;margin:0;color:var(--muted)}
+.plan-chip{flex:none;padding:.45rem .75rem;border-radius:999px;color:#fff;font-size:.78rem;font-weight:900}.chip-free{background:var(--free)}.chip-basic{background:var(--basic)}.chip-plus{background:var(--plus)}.chip-business{background:var(--business)}
+.grid{display:grid;gap:1rem}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{border:1px solid var(--line);border-radius:22px;background:var(--card);box-shadow:var(--shadow)}.card-pad{padding:1.2rem}.card h3{margin:.1rem 0 .45rem;line-height:1.35}.card p{margin:.35rem 0;color:var(--muted)}
+.callout{padding:1rem 1.1rem;border:1px solid #cfe0d8;border-radius:18px;background:#f5fbf7}.callout strong{display:block;margin-bottom:.2rem}
+.source-row{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.8rem}.source-chip{padding:.3rem .55rem;border-radius:999px;background:#eef5f1;color:#365e52;font-size:.75rem;font-weight:800}
+.article-shell{display:grid;grid-template-columns:minmax(0,760px) minmax(220px,1fr);gap:2rem;align-items:start}.article-detail{min-width:0}.article-featured{overflow:hidden;margin-bottom:1rem;border-radius:20px;background:#eef5f1}.article-featured img{display:block;width:100%;height:auto}
+.entry-title{margin:0 0 .65rem;font-size:clamp(1.75rem,5vw,2.5rem);font-weight:800;line-height:1.35}.article-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.15rem}
+.article-tags span{padding:.2rem .55rem;border-radius:999px;background:#eef5f1;color:#365e52;font-size:.78rem}.entry-content{font-size:1rem}.entry-content p{color:#465d56}.entry-content h3{margin:1.7rem 0 .5rem;font-size:1.25rem}
+.side-panel{position:sticky;top:155px;padding:1.2rem;border-radius:20px;background:#eff7f2}.side-panel strong{display:block}.side-panel p{font-size:.86rem;color:var(--muted)}
+.info-list{display:grid;gap:.55rem;margin:1rem 0}.info-row{display:grid;grid-template-columns:82px 1fr;gap:.7rem;padding-bottom:.55rem;border-bottom:1px solid var(--line);font-size:.86rem}.info-row b{font-size:.78rem}
+.reviewmo-comment{display:grid;grid-template-columns:76px 1fr;gap:.8rem;align-items:center;margin:1.5rem 0;padding:1rem;border:1px solid #d9e8e1;border-radius:18px;background:#f8fcfa}
+.reviewmo-comment img{width:76px;height:76px;border-radius:18px;object-fit:cover;object-position:50% 18%;background:#e8f1ed}.reviewmo-comment strong{display:block}.reviewmo-comment p{margin:.2rem 0 0;font-size:.9rem}
+.ai-note{margin-top:1.2rem;padding-top:.8rem;border-top:1px solid var(--line);color:var(--muted);font-size:.75rem}.journey-box{margin:1.2rem 0;padding:1rem;border:1px solid #d7e5df;border-radius:16px;background:#f8fcfa}.journey-box h3{margin:0 0 .65rem}.journey-actions{display:flex;flex-wrap:wrap;gap:.5rem}.journey-actions button{min-height:42px;border:1px solid #27765e;border-radius:10px;padding:.45rem .7rem;background:#fff;color:#185a47;font-weight:800}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;border:0;border-radius:999px;padding:.7rem 1.1rem;color:#fff;font-weight:900;text-decoration:none}.cta-free{background:var(--free)}.cta-basic{background:var(--basic)}.cta-plus{background:var(--plus)}.cta-business{background:var(--business)}.cta-dark{background:var(--ink)}
+.section-label{margin:2rem 0 .75rem;font-size:.8rem;font-weight:900;color:var(--muted);letter-spacing:.08em}.upgrade-card{margin-top:1.25rem;padding:1.2rem;border-radius:22px;background:linear-gradient(135deg,#17352e,#285e50);color:#fff}.upgrade-card p{color:rgba(255,255,255,.78)}.upgrade-card .cta{background:#fff;color:var(--ink)}
+.alie-program-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}.program-card{position:relative;text-align:left;padding:1rem;border:1px solid var(--line);border-radius:18px;background:#fff;color:var(--ink)}
+.program-card:hover,.program-card.selected{border-color:var(--leaf);box-shadow:0 0 0 3px rgba(51,134,109,.12)}.program-card.locked{opacity:.48;cursor:not-allowed}.program-no{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e8f5ef;color:var(--leaf);font-weight:900}.program-card h4{margin:.6rem 0 .25rem}.program-card p{margin:0;font-size:.82rem;color:var(--muted)}
+.alie-result{display:none;margin-top:.8rem;padding:1rem;border:1px solid #b9dccd;border-radius:18px;background:#effaf5}.alie-result.show{display:block}.alie-result .reason{font-size:.82rem;color:var(--muted)}.alie-result ul{margin:.6rem 0 0;padding-left:1.15rem}
+.basic-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:1rem}.form-card{padding:1.1rem}.field{margin-bottom:.85rem}.field label{display:block;margin-bottom:.3rem;font-size:.78rem;font-weight:900}.field input,.field textarea{width:100%;padding:.75rem .8rem;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}.field textarea{min-height:94px;resize:vertical}.hint{color:var(--muted);font-size:.73rem}
+.reviewmo-picker{display:grid;grid-template-columns:repeat(5,minmax(90px,1fr));gap:.5rem;overflow-x:auto;padding-bottom:.2rem}.reviewmo-choice{min-width:90px;padding:.55rem;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:center}
+.reviewmo-choice.selected{border-color:var(--leaf);box-shadow:0 0 0 3px rgba(51,134,109,.12)}.reviewmo-choice img{width:54px;height:54px;margin:0 auto .35rem;border-radius:14px;object-fit:cover;object-position:50% 18%}.reviewmo-choice b{display:block;font-size:.8rem}.reviewmo-choice small{display:block;color:var(--muted);font-size:.66rem;line-height:1.35}
+.generation-box{padding:1rem}.gen-steps{display:grid;gap:.5rem;margin-top:.8rem}.gen-step{display:flex;align-items:center;gap:.65rem;padding:.65rem;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);font-size:.82rem}
+.gen-step::before{content:"";width:12px;height:12px;border-radius:50%;background:#cfd9d4;box-shadow:0 0 0 4px #f0f4f2}.gen-step.running{color:var(--ink);border-color:#b9dccd}.gen-step.running::before{background:var(--accent);animation:pulse 1s infinite}.gen-step.done{color:var(--ink)}.gen-step.done::before{background:var(--leaf)}
+@keyframes pulse{50%{transform:scale(1.15)}}.generated-area{display:none}.generated-area.show{display:block}.generated-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
+.generated-cover{position:relative;overflow:hidden;aspect-ratio:16/9;border-radius:20px;background:#17352e}.generated-cover img{width:100%;height:100%;object-fit:cover;filter:saturate(1.02) contrast(1.02)}
+.cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.6))}.cover-copy{position:absolute;left:1rem;right:1rem;bottom:1rem;color:#fff}.cover-copy small{font-weight:900;letter-spacing:.09em}.cover-copy strong{display:block;margin-top:.2rem;font-size:clamp(1.25rem,5vw,2.1rem);line-height:1.2}
+.output-list{display:grid;gap:.65rem}.output-item{display:grid;grid-template-columns:72px 1fr;gap:.7rem;padding:.65rem;border:1px solid var(--line);border-radius:14px;background:#fff}.output-item img{width:72px;height:58px;border-radius:10px;object-fit:cover}.output-item b{display:block;font-size:.82rem}.output-item small{color:var(--muted);font-size:.72rem}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.mini-article{padding:1rem;border:1px solid var(--line);border-radius:18px;background:#fff}.mini-article .label{font-size:.72rem;font-weight:900;color:var(--muted)}.mini-article h4{margin:.35rem 0}.mini-article p{margin:0;font-size:.82rem;color:var(--muted)}
+.cycle-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:.8rem}.cycle-head strong{font-size:1.8rem}.cycle-track{display:grid;gap:.65rem}.cycle{display:grid;grid-template-columns:42px 1fr auto;gap:.7rem;align-items:center;padding:.8rem;border:1px solid var(--line);border-radius:16px;background:#fff}.cycle-no{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff1e8;color:var(--plus);font-weight:900}.cycle b{display:block}.cycle small{display:block;color:var(--muted)}.cycle-state{padding:.25rem .5rem;border-radius:999px;background:#f2f4f3;color:#68756f;font-size:.7rem;font-weight:900}.cycle.done .cycle-state{background:#e6f4ed;color:#246b56}.cycle.active{border-color:#efb89f}.cycle.active .cycle-state{background:#fff0e9;color:#a84d2b}
+.store-page{overflow:hidden}.store-page-head{padding:1.2rem;background:linear-gradient(135deg,#17352e,#2d6657);color:#fff}.store-page-head small{opacity:.75}.store-page-head h3{margin:.2rem 0}.history-list{padding:1rem;display:grid;gap:.65rem}.history-item{display:grid;grid-template-columns:72px 1fr;gap:.7rem}.history-item img{width:72px;height:64px;border-radius:10px;object-fit:cover}.history-item b{display:block;font-size:.84rem}.history-item small{color:var(--muted)}
+.business-pool{padding:1rem;background:#f7f3fb;border:1px solid #dfd3ed;border-radius:18px}.pool-bar{height:12px;display:flex;overflow:hidden;margin:.7rem 0;border-radius:999px;background:#eee}.pool-main{width:40%;background:#7151a6}.pool-station{width:30%;background:#9a7cc2}.pool-gift{width:30%;background:#c0abd9}.pool-legend{display:flex;flex-wrap:wrap;gap:.5rem;font-size:.75rem}.pool-legend span{padding:.25rem .45rem;border-radius:999px;background:#fff}
+.store-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}.biz-store{padding:1rem;border:1px solid #e2d9eb;border-radius:18px;background:#fff}.biz-store small{color:var(--muted)}.biz-store h4{margin:.25rem 0}.virtual-badge{display:inline-block;margin-top:.35rem;padding:.15rem .45rem;border-radius:999px;background:#f2edf7;color:#7151a6;font-size:.66rem;font-weight:900}
+.cross-action{margin-top:1rem;padding:1rem;border:1px dashed #bca9d0;border-radius:16px;background:#fcfaff}.cross-flow{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.cross-node{padding:.5rem .7rem;border-radius:12px;background:#fff;border:1px solid #e2d9eb;font-size:.8rem;font-weight:800}.cross-arrow{color:#7151a6;font-weight:900}
+.alie-core{padding:1.1rem;background:linear-gradient(135deg,#17352e,#244b42);color:#fff;border-radius:22px}.alie-core p{color:rgba(255,255,255,.78)}.engine-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}.engine{padding:1rem;border-radius:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16)}.engine small{opacity:.7}.engine h3{margin:.2rem 0}.engine p{font-size:.82rem}
+.plan-table{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem;margin-top:1rem}.plan-card{padding:1rem;border:1px solid var(--line);border-radius:18px;background:#fff}.plan-card h3{margin:.1rem 0}.price{font-size:1.25rem;font-weight:900}.plan-card ul{margin:.6rem 0 0;padding-left:1rem;font-size:.8rem;color:#4d625b}
+.site-footer{padding:2.5rem 0 6rem;background:var(--ink);color:#fff}.site-footer p{margin:.3rem 0;color:rgba(255,255,255,.72);font-size:.78rem}
+.mobile-next{display:none}
+.hidden{display:none!important}
+@media(max-width:820px){
+  .site-wrap{width:min(100% - 1.2rem,1180px)}.header-inner{min-height:68px}.brand img{width:138px}.header-meta strong{font-size:.7rem}.header-meta small{display:none}
+  .mobile-discovery-nav{justify-content:flex-start;overflow-x:auto}.plan-rail-wrap{top:68px}.stage{padding-top:1.35rem}.stage-head{flex-direction:column}.plan-chip{order:-1}
+  .grid-2,.grid-3,.basic-form,.generated-grid,.before-after,.engine-grid,.plan-table{grid-template-columns:1fr}.article-shell{grid-template-columns:1fr}.side-panel{position:static}.alie-program-grid{grid-template-columns:1fr}
+  .reviewmo-picker{grid-template-columns:repeat(5,100px)}.cycle{grid-template-columns:38px 1fr}.cycle-state{grid-column:2}.store-grid{grid-template-columns:1fr}.demo-hero{padding-top:1.7rem}
+  .mobile-next{position:fixed;left:.6rem;right:.6rem;bottom:calc(.55rem + env(safe-area-inset-bottom));z-index:80;display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.55rem .65rem;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:rgba(23,53,46,.94);box-shadow:0 14px 45px rgba(0,0,0,.22);backdrop-filter:blur(12px);color:#fff}
+  .mobile-next span{font-size:.72rem}.mobile-next button{min-height:42px;border:0;border-radius:999px;padding:.55rem .85rem;background:#fff;color:var(--ink);font-weight:900;white-space:nowrap}
+}
+@media(max-width:460px){.header-meta{display:none}.demo-hero h1{font-size:2.15rem}.reviewmo-comment{grid-template-columns:62px 1fr}.reviewmo-comment img{width:62px;height:62px}.info-row{grid-template-columns:72px 1fr}.cycle-head{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
-<div class="app">
-<header class="topbar">
-  <div class="brand"><img src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/brand/twinow-official-transparent.png" alt="ついなう！"><span>× ALIE</span></div>
-  <div class="demo-badge" id="planBadge">Free掲載中</div>
+<header class="site-header">
+  <div class="site-wrap header-inner">
+    <a class="brand" href="#" aria-label="Twinow ついなう！"><img src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/brand/twinow-official-transparent.png" alt="Twinow ついなう！"></a>
+    <div class="header-meta"><strong>店舗プラン体験デモ</strong><small>焼きたてパン工房 GALLO</small></div>
+  </div>
 </header>
-<nav class="nav">
-  <button id="freeTab" class="on">1. Freeの記事を見る</button>
-  <button id="basicTab">2. Basicを体験する</button>
-</nav>
+<nav class="mobile-discovery-nav" aria-label="Twinowの入口"><span>行く</span><span>食べる</span><span>買う</span><span>響に相談</span></nav>
 
-<section id="freeScreen" class="screen on">
-  <div class="article-shell">
-    <div class="article-layout">
-      <main class="article-main">
-        <div class="hero-image"><img class="liveProductImage" src="assets/gallo-saltbread.jpg" alt="GALLOのパン"></div>
-        <h1 class="title">焼きたてパン工房 GALLO｜毎日に寄り添う町のパン屋さん</h1>
-        <div class="tags"><span class="tag">パン</span><span class="tag">グルメ</span><span class="tag">津</span><span class="tag">食べる</span></div>
-        <p class="lead">焼きたてパン工房 GALLOは、普段使いしやすいパンを選べる地域のお店。Freeでは、公開されている店舗情報を土台に、初めて知った人が「どんな店か」を確認できる記事として紹介します。</p>
-        <div class="toc"><b>目次</b><ul><li>先に結論：日常のパンを探す入口に</li><li>GALLOでパンを選ぶ</li><li>来店前に確認したいこと</li><li>店舗情報を見る</li></ul></div>
-        <h2 class="section-title">先に結論：日常のパンを探す入口に</h2>
-        <p>Freeの記事は、商品を強く売り込むためではなく、店舗の基本情報と魅力をニュートラルに伝える入口です。営業時間や場所とあわせて、どんなパン屋なのかを知るところから始まります。</p>
-        <div class="article-photo"><img class="liveProductImage" src="assets/gallo-saltbread.jpg" alt="GALLOのパン"></div>
-        <p class="caption">焼きたてパン工房 GALLOの商品イメージ。</p>
-        <h2 class="section-title">GALLOでパンを選ぶ</h2>
-        <p>その日の気分や食事のタイミングに合わせてパンを選ぶのも、町のパン屋を訪ねる楽しみのひとつ。店頭の商品や焼き上がりは日によって変わるため、実際の品ぞろえは来店時に確認します。</p>
-        <h2 class="section-title">来店前に確認したいこと</h2>
-        <ul><li>営業時間や休業日は変更される場合があります。</li><li>商品は売り切れになる場合があります。</li><li>最新情報は店舗の公式発信で確認します。</li></ul>
-        <div class="review-line"><div class="avatar"><img src="assets/aina.svg" alt="愛菜"></div><div><strong>ReViewMo 愛菜 -AiNa-</strong><span>まずは気になるパンをひとつ。普段使いできるお店かどうか、店頭で見つけるのも楽しみです。</span></div></div>
-        <h2 class="section-title">店舗情報を見る</h2>
-        <p>記事を読んで気になったら、そのままGALLOの店舗情報へ。Freeでは「知る → 店舗情報を確認する」までをつなぎます。</p>
-        <div class="share"><b>シェア</b><span>X</span><span>LINE</span><span>Facebook</span><span>URLをコピー</span></div>
-        <div class="next-step"><h3>閲覧中の次の一歩</h3><p>地域や目的を少し広げると、次の寄り道につながります。</p><div class="next-buttons"><button>地域を少し広げる</button><button>目的を変える</button><button>Twinowの別の入口を見る</button></div></div>
-      </main>
-      <aside class="aside"><div class="ad-card"><small>店舗ページ</small><img class="liveProductImage" src="assets/gallo-saltbread.jpg" alt="GALLO"><h3>焼きたてパン工房 GALLO</h3><p>店舗情報・営業時間・アクセスを確認して、来店につなげます。</p><button class="basic-cta" id="startBasicSide">Basic 月額1,500円を体験する</button></div></aside>
-    </div>
+<section class="demo-hero">
+  <div class="site-wrap">
+    <p class="eyebrow">GALLO × TWINOW × ALIE</p>
+    <h1>無料掲載から、<br>売上改善まで。</h1>
+    <p>同じ店舗がFreeからBusinessへ進むと、何が変わるのか。Twinowの記事・画像生成・ReViewMo・ALIEを、スマホで順番に体験できます。</p>
+    <span class="store-pill"><span class="store-dot"></span>焼きたてパン工房 GALLO｜三重県津市</span>
   </div>
 </section>
 
-<section id="basicScreen" class="screen">
-  <div class="experience">
-    <h1>写真1枚と「売りたい理由」から、ALIEが販促を組み立てる。</h1>
-    <p class="sub">Basicは月1回。店主しか知らない不足情報だけを確認し、Twinow記事と店舗側記事を同時に公開前プレビューまで整えます。</p>
-    <div class="flowbar"><div class="active" id="f1">1 写真・目的</div><div id="f2">2 ALIEが確認</div><div id="f3">3 2記事を確認</div><div id="f4">4 公開</div></div>
-
-    <section class="panel" id="inputPanel">
-      <h2>1. 商品写真と目的を伝える</h2>
-      <p class="panel-intro">写真はこの画面で差し替えできます。選んだ写真は、Twinow記事・店舗側記事の両方へそのまま反映します。</p>
-      <div class="input-grid">
-        <label class="upload" for="photoInput"><div class="upload-preview"><img id="uploadPreview" src="assets/gallo-saltbread.jpg" alt="商品写真"></div><span class="upload-label">タップして商品写真を選ぶ</span><input id="photoInput" type="file" accept="image/*"></label>
-        <div><div class="field"><label for="purpose">今回、何を売りたいですか？</label><textarea id="purpose">来週から、この塩パンをおすすめしたいです。</textarea><div class="hint">長い説明は不要です。分からないことはALIEから確認します。</div></div><div class="actions"><button class="primary" id="askAlie">ALIEに相談する</button><button class="secondary" id="resetDemo">最初から</button></div></div>
-      </div>
-    </section>
-
-    <section class="panel questions" id="questionPanel">
-      <h2>2. ALIEが不足情報だけ確認</h2>
-      <div class="alie"><img src="assets/hibiki.svg" alt="響"><div class="alie-bubble" id="alieBubble">写真と目的は受け取りました。公開に必要なことだけ確認します。</div></div>
-      <div class="qgrid" id="questionGrid"></div>
-      <div class="actions"><button class="primary" id="makePreview">回答してプレビューを作る</button><button class="secondary" id="backInput">写真・目的に戻る</button></div>
-    </section>
-
-    <div class="preview-wrap" id="previewWrap">
-      <div class="preview-headline"><h2>3. 公開前の完成形を確認</h2><span class="state" id="previewState">公開前・回数未消費</span></div>
-      <div class="panel">
-        <p class="panel-intro">担当ReViewMoを変えると、記事内の担当表示と「ひとこと」も同時に変わります。</p>
-        <div class="reviewmo-picker" id="reviewmoPicker">
-          <button class="person on" data-key="aina" data-name="愛菜 -AiNa-" data-initial="愛" data-img="assets/aina.svg"><span class="person-avatar"><img src="assets/aina.svg" alt="愛菜"></span><b>愛菜</b><small>グルメ</small></button>
-          <button class="person" data-key="hibiki" data-name="響 -Hibiki-" data-initial="響" data-img="assets/hibiki.svg"><span class="person-avatar"><img src="assets/hibiki.svg" alt="響"></span><b>響</b><small>コンパニオン</small></button>
-          <button class="person" data-key="hinata" data-name="陽葵 -Hinata-" data-initial="陽" data-img=""><span class="person-avatar">陽</span><b>陽葵</b><small>ReViewMo</small></button>
-          <button class="person" data-key="shiori" data-name="詩織 -Shiori-" data-initial="詩" data-img=""><span class="person-avatar">詩</span><b>詩織</b><small>観光・自然</small></button>
-          <button class="person" data-key="yuika" data-name="結花 -Yuika-" data-initial="結" data-img=""><span class="person-avatar">結</span><b>結花</b><small>ReViewMo</small></button>
-        </div>
-      </div>
-      <div class="preview-tabs"><button class="on" id="twinowPreviewTab">Twinow記事</button><button id="storePreviewTab">店舗側の記事</button></div>
-
-      <section class="preview-pane on" id="twinowPane">
-        <div class="twinow-preview"><div class="twinow-minihead">twinow! ｜ 公開前プレビュー</div><article class="twinow-content">
-          <div class="hero-image"><img class="liveProductImage" src="assets/gallo-saltbread.jpg" alt="塩パン"></div>
-          <h1 class="title" id="promoTitle">来週から。GALLOの新しい塩パン</h1>
-          <div class="tags"><span class="tag">パン</span><span class="tag">GALLO</span><span class="tag">今月のおすすめ</span><span class="tag">食べる</span></div>
-          <p class="lead" id="promoLead">焼きたてパン工房 GALLOから、来週おすすめしたい塩パンをご紹介。店頭へ行く理由が分かるよう、販売情報と商品の特徴を一つの記事にまとめます。</p>
-          <div class="toc"><b>目次</b><ul><li>先に結論：今週GALLOへ行くなら</li><li>今回おすすめする塩パン</li><li>販売情報</li><li>GALLOの店舗情報へ</li></ul></div>
-          <div class="article-photo"><img class="liveProductImage" src="assets/gallo-saltbread.jpg" alt="塩パン"></div>
-          <h2 class="section-title">今回おすすめする塩パン</h2><p id="featureText">北海道産小麦を使った塩パン。焼きたての香ばしさを楽しめる一品としてご紹介します。</p>
-          <h2 class="section-title">販売情報</h2><p id="saleText">販売開始と価格を確認してからお出かけください。</p>
-          <div class="review-line"><div class="avatar" id="promoAvatar"><img id="promoAvatarImg" src="assets/aina.svg" alt="愛菜"><span id="promoAvatarText" class="hidden">愛</span></div><div><strong id="promoPerson">ReViewMo 愛菜 -AiNa-</strong><span id="promoComment">新しい塩パンが出るなら、焼き上がりを楽しみにしてもらえるように「今行く理由」まで届けます。</span></div></div>
-          <div class="next-step"><h3>焼きたてパン工房 GALLO</h3><p>営業時間・場所など来店前の情報は店舗ページで確認できます。</p><div class="next-buttons"><button>GALLOの店舗情報を見る →</button></div></div>
-        </article></div>
-      </section>
-
-      <section class="preview-pane" id="storePane">
-        <div class="store-preview"><div class="store-top"><small>焼きたてパン工房 GALLO｜店舗からのお知らせ</small><h2>今月のおすすめ</h2></div>
-          <div class="campaign-banner"><div class="shop-product"><img class="liveProductImage" src="assets/gallo-saltbread.jpg" alt="塩パン"></div><div><h3 id="storeCampaignTitle">来週から、新しい塩パン</h3><p id="storeCampaignMeta">販売開始・価格・特徴をここに反映します。</p><div class="published-chip" id="publishedChip">Twinow記事と公開連携済み</div></div></div>
-          <article class="store-article"><h3 id="storeArticleTitle">新しい塩パンのお知らせ</h3><p id="storeArticleBody">来週からおすすめする塩パンについて、店頭でお伝えしたい情報をまとめます。</p><p><b>詳しくはTwinowの記事を見る →</b></p></article>
-        </div>
-      </section>
-
-      <div class="panel"><div class="publishbox"><div><strong id="remaining">Basic 今月あと1回</strong><div class="publish-result" id="publishResult">プレビューでは消費しません。公開成功時だけ1回消費します。</div></div><button class="primary" id="publishBtn">この内容で公開する</button></div></div>
-    </div>
+<div class="plan-rail-wrap">
+  <div class="site-wrap plan-rail" id="planRail">
+    <button class="plan-tab active" data-stage="free">Free</button>
+    <button class="plan-tab" data-stage="basic">Basic</button>
+    <button class="plan-tab" data-stage="plus">Plus</button>
+    <button class="plan-tab" data-stage="business">Business</button>
+    <button class="plan-tab" data-stage="alie">ALIE 3プログラム</button>
   </div>
-</section>
-<footer class="foot">GALLO × Twinow / Free → Basic interactive prototype</footer>
 </div>
+
+<main>
+<section class="stage active" id="stage-free">
+  <div class="site-wrap">
+    <header class="stage-head">
+      <div><p class="stage-kicker">FREE｜掲載無料</p><h2>公開情報から、自動で記事になる。</h2><p>店主が文章を書かなくても、公開されている店舗情報を入口にTwinowの記事を自動生成。まずは「載る」を体験します。</p></div>
+      <span class="plan-chip chip-free">体験</span>
+    </header>
+
+    <div class="callout">
+      <strong>Freeで店主がやること：ほぼありません。</strong>
+      <span>ALIEが公開情報を確認し、事実中心の記事を組み立てます。最新情報は来店前に店舗の公式発信で確認する前提です。</span>
+      <div class="source-row"><span class="source-chip">Google等の公開情報</span><span class="source-chip">公式SNS</span><span class="source-chip">口コミ媒体</span><span class="source-chip">Twinow掲載情報</span></div>
+    </div>
+
+    <p class="section-label">FREEで自動生成されたTwinow記事</p>
+    <div class="article-shell">
+      <article class="article-detail">
+        <div class="article-featured"><img src="assets/gallo-saltbread.jpg" alt="GALLO パン商品イメージ"></div>
+        <h1 class="entry-title">焼きたてパン工房 GALLO｜白塚で立ち寄りたいテイクアウトのパン屋さん</h1>
+        <div class="article-tags"><span>パン</span><span>津市</span><span>白塚</span><span>食べる</span></div>
+        <div class="entry-content">
+          <p>焼きたてパン工房 GALLOは、三重県津市白塚町にあるパン店。公開情報ではテイクアウト専門店として案内され、パンを買って持ち帰りたいときの選択肢になります。</p>
+          <h3>来店前に確認したいこと</h3>
+          <p>公開情報では水・木・金・土・祝日の営業が案内され、売切れ次第終了とされています。営業状況や商品は変わる場合があるため、来店前は公式発信で最新情報を確認します。</p>
+          <div class="info-list">
+            <div class="info-row"><b>エリア</b><span>三重県津市白塚町</span></div>
+            <div class="info-row"><b>スタイル</b><span>テイクアウト</span></div>
+            <div class="info-row"><b>公開情報</b><span>営業時間・予約窓口・口コミ等を参照して記事化</span></div>
+          </div>
+          <div class="reviewmo-comment">
+            <img src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_aina_profile_v03.png" alt="愛菜">
+            <div><strong>ReViewMo 愛菜 / AiNa</strong><p>パンを選ぶ時間も含めて楽しめそう。まずは最新の営業情報を確認して、気になる一品を探しに行きたいです。</p></div>
+          </div>
+          <div class="journey-box"><h3>このあと、どうする？</h3><div class="journey-actions"><button>近くのパン屋を見る</button><button>津市で食べる</button><button>響に相談する</button></div></div>
+          <p class="ai-note">※本記事の掲載画像には、AIにより生成・合成したイメージ画像を含む場合があります。実際の商品・店舗・施設・景観等とは異なる場合があります。</p>
+        </div>
+      </article>
+      <aside class="side-panel"><strong>Twinow</strong><p>地域の「行く・食べる・買う」を見つけるローカルガイド。</p><div class="source-row"><span class="source-chip">津市</span><span class="source-chip">パン</span></div></aside>
+    </div>
+
+    <p class="section-label">FREE特典｜ALIEの売上アッププログラムを1つ体験</p>
+    <div class="alie-program-grid" id="freeProgramGrid">
+      <button class="program-card" data-program="offer"><span class="program-no">1</span><h4>今、何を売るか</h4><p>公開情報から「今推す候補」を作る。</p></button>
+      <button class="program-card" data-program="conversion"><span class="program-no">2</span><h4>取りこぼしを減らす</h4><p>発見から来店までの弱い1点を見る。</p></button>
+      <button class="program-card" data-program="positioning"><span class="program-no">3</span><h4>選ばれる理由を強くする</h4><p>口コミ等から訴求軸を見つける。</p></button>
+    </div>
+    <div class="alie-result" id="freeAlieResult"></div>
+
+    <div class="upgrade-card">
+      <h3>Freeは「載る」。Basicから「今売りたいもの」を反映できます。</h3>
+      <p>キャンペーン内容を記事へ再生成し、ReViewMo選択、アイキャッチの文字、ReViewMoの一言まで一体で変わる体験へ進みます。</p>
+      <button class="cta" data-goto="basic">Basicを体験する →</button>
+    </div>
+  </div>
+</section>
+
+<section class="stage" id="stage-basic">
+  <div class="site-wrap">
+    <header class="stage-head">
+      <div><p class="stage-kicker">BASIC｜月額1,500円</p><h2>毎月、いちばん売上に近い一手を。</h2><p>3つのALIEプログラムを裏側で見ながら、今月の最優先施策を1つ選定。キャンペーンに合わせて記事と画像を1回再生成できます。</p></div>
+      <span class="plan-chip chip-basic">毎月一手</span>
+    </header>
+
+    <div class="basic-form">
+      <div class="card form-card">
+        <h3>今月のキャンペーンを伝える</h3>
+        <p class="hint">下記はデモ入力例です。実運用では店主しか持っていない情報だけ確認します。</p>
+        <div class="field"><label for="campaignName">今回、何を売りたいですか？</label><input id="campaignName" value="塩パンを今週のおすすめにしたい"></div>
+        <div class="field"><label for="campaignCopy">アイキャッチに入れたい短い訴求</label><input id="campaignCopy" value="今週のおすすめ 塩パン"></div>
+        <div class="field"><label for="campaignNote">補足</label><textarea id="campaignNote">焼きたて感が伝わる記事にしたい。</textarea></div>
+      </div>
+      <div class="card generation-box">
+        <h3>ReViewMoを選ぶ</h3>
+        <p class="hint">正式なTwinow ReViewMo画像を使用。選択は記事内の一言にも反映します。</p>
+        <div class="reviewmo-picker" id="reviewmoPicker">
+          <button class="reviewmo-choice selected" data-key="aina" data-name="愛菜" data-roman="AiNa" data-role="グルメ・ギフト担当" data-img="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_aina_profile_v03.png"><img src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_aina_profile_v03.png" alt="愛菜"><b>愛菜</b><small>グルメ・ギフト</small></button>
+          <button class="reviewmo-choice" data-key="hinata" data-name="陽葵" data-roman="HiNaTa" data-role="おでかけ・イベント担当" data-img="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_hinata_profile_v03.png"><img src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_hinata_profile_v03.png" alt="陽葵"><b>陽葵</b><small>おでかけ・イベント</small></button>
+          <button class="reviewmo-choice" data-key="hibiki" data-name="響" data-roman="HiBiKi" data-role="センター／総合案内役" data-img="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_hibiki_profile_v03.png"><img src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_hibiki_profile_v03.png" alt="響"><b>響</b><small>センター／総合案内</small></button>
+          <button class="reviewmo-choice" data-key="shiori" data-name="詩織" data-roman="SiORi" data-role="癒し自然・観光担当" data-img="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_shiori_profile_v03.png"><img src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_shiori_profile_v03.png" alt="詩織"><b>詩織</b><small>癒し自然・観光</small></button>
+          <button class="reviewmo-choice" data-key="yuika" data-name="結花" data-roman="YuiKa" data-role="カルチャー・ファッション担当" data-img="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_yuika_profile_v03.png"><img src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_yuika_profile_v03.png" alt="結花"><b>結花</b><small>カルチャー・ファッション</small></button>
+        </div>
+        <button class="cta cta-basic" id="generateBasic" style="margin-top:.9rem;width:100%">記事と画像を再生成する</button>
+        <div class="gen-steps" id="genSteps">
+          <div class="gen-step" data-step="0">公開情報＋キャンペーン意図を整理</div>
+          <div class="gen-step" data-step="1">アイキャッチを生成</div>
+          <div class="gen-step" data-step="2">本文用画像を整合</div>
+          <div class="gen-step" data-step="3">ReViewMoの一言を生成</div>
+          <div class="gen-step" data-step="4">Twinow記事を再生成</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="generated-area" id="basicGenerated">
+      <p class="section-label">生成結果｜Freeから何が変わったか</p>
+      <div class="generated-grid">
+        <div class="generated-cover"><img src="assets/gallo-saltbread.jpg" alt="生成アイキャッチ"><span class="cover-shade"></span><div class="cover-copy"><small>焼きたてパン工房 GALLO</small><strong id="coverCopy">今週のおすすめ 塩パン</strong></div></div>
+        <div class="output-list">
+          <div class="output-item"><img src="assets/gallo-saltbread.jpg" alt=""><div><b>featured / アイキャッチ</b><small>キャンペーン文言を反映。商品主体の画面。</small></div></div>
+          <div class="output-item"><img src="assets/gallo-saltbread.jpg" alt=""><div><b>inline editorial / 本文画像</b><small>記事本文の販促内容と整合。</small></div></div>
+          <div class="output-item"><img id="outputAvatar" src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_aina_profile_v03.png" alt=""><div><b>ReViewMoコメント</b><small id="outputPerson">愛菜 / AiNa の一言へ反映。</small></div></div>
+        </div>
+      </div>
+      <div class="before-after" style="margin-top:1rem">
+        <div class="mini-article"><span class="label">FREE</span><h4>店舗を知るための記事</h4><p>公開情報を中心に、事実をニュートラルに紹介。</p></div>
+        <div class="mini-article"><span class="label">BASIC</span><h4 id="basicArticleTitle">「塩パン」を売るための記事</h4><p id="basicArticleLead">キャンペーン、画像、ReViewMoの一言が同じ目的へ揃います。</p></div>
+      </div>
+      <div class="reviewmo-comment" style="margin-top:1rem">
+        <img id="basicAvatar" src="https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_aina_profile_v03.png" alt="愛菜">
+        <div><strong id="basicPerson">ReViewMo 愛菜 / AiNa</strong><p id="basicComment">今週のおすすめとして塩パンを選ぶなら、焼きたて感と「今行く理由」が同時に伝わるように届けます。</p></div>
+      </div>
+      <div class="callout"><strong>Basic 今月のSales Action Cycle：1回</strong><span>プレビューでは消費しません。実運用では公開成功までを1サイクルとして扱います。</span></div>
+      <div class="upgrade-card"><h3>1回で終わらず、結果を見て次へ進むならPlus。</h3><p>Plusでは月5 Cycle。実行 → 結果確認 → 再判断 → 次の一手まで、ALIEが継続改善を回します。</p><button class="cta" data-goto="plus">Plusを体験する →</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="stage" id="stage-plus">
+  <div class="site-wrap">
+    <header class="stage-head">
+      <div><p class="stage-kicker">PLUS｜月額3,500円</p><h2>結果を見ながら、改善を続ける。</h2><p>月5 Sales Action Cycle。3つのALIEエンジンを行き来しながら、前の実行結果を次の判断へ戻します。</p></div>
+      <span class="plan-chip chip-plus">継続改善</span>
+    </header>
+    <div class="grid grid-2">
+      <div class="card card-pad">
+        <div class="cycle-head"><div><small>今月の改善サイクル</small><br><strong><span id="plusDone">1</span> / 5</strong></div><button class="cta cta-plus" id="plusNext">次のCycleを体験</button></div>
+        <div class="cycle-track" id="cycleTrack">
+          <div class="cycle done" data-cycle="1"><span class="cycle-no">1</span><div><b>今売るものを決める</b><small>塩パンのキャンペーン記事・画像を実行</small></div><span class="cycle-state">実行済み</span></div>
+          <div class="cycle active" data-cycle="2"><span class="cycle-no">2</span><div><b>取りこぼしを確認</b><small>来店前の情報導線を確認するデモ候補</small></div><span class="cycle-state">次の一手</span></div>
+          <div class="cycle" data-cycle="3"><span class="cycle-no">3</span><div><b>選ばれる理由を強化</b><small>口コミの言葉から訴求軸を再構成するデモ候補</small></div><span class="cycle-state">待機</span></div>
+          <div class="cycle" data-cycle="4"><span class="cycle-no">4</span><div><b>次の販売テーマを判断</b><small>季節・反応・店舗情報を再確認するデモ候補</small></div><span class="cycle-state">待機</span></div>
+          <div class="cycle" data-cycle="5"><span class="cycle-no">5</span><div><b>月内の学びを次へ</b><small>結果を記録して翌月の判断材料へ</small></div><span class="cycle-state">待機</span></div>
+        </div>
+        <p class="hint" style="margin-top:.7rem">※成果値を架空の数字で補わず、「結果確認待ち／取得済み」を分ける設計です。</p>
+      </div>
+      <div class="card store-page">
+        <div class="store-page-head"><small>Twinow内 店舗ページ</small><h3>焼きたてパン工房 GALLO</h3><span>Plusで、記事とキャンペーンを継続して蓄積</span></div>
+        <div class="history-list">
+          <div class="history-item"><img src="assets/gallo-saltbread.jpg" alt=""><div><b>今週のおすすめ「塩パン」</b><small>Cycle 1｜キャンペーン記事</small></div></div>
+          <div class="history-item"><img src="assets/gallo-saltbread.jpg" alt=""><div><b>来店前に知っておきたいこと</b><small>Cycle 2｜情報導線の改善候補</small></div></div>
+          <div class="history-item"><img src="assets/gallo-saltbread.jpg" alt=""><div><b>GALLOが選ばれる理由</b><small>Cycle 3｜訴求軸の改善候補</small></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="upgrade-card" style="background:linear-gradient(135deg,#7b3d21,#c15831)"><h3>複数店舗・事業全体で最適化するならBusiness。</h3><p>BusinessはPlusより回数が多いだけではありません。ALIEが見る対象が「1店舗」から「事業」へ変わります。</p><button class="cta" data-goto="business">Businessを体験する →</button></div>
+  </div>
+</section>
+
+<section class="stage" id="stage-business">
+  <div class="site-wrap">
+    <header class="stage-head">
+      <div><p class="stage-kicker">BUSINESS｜月額5,500円</p><h2>店舗ではなく、事業全体を最適化。</h2><p>月10 Cycle相当を契約単位のプールとして扱える設計。どの店舗へ施策を配るか、成功施策を横展開できるかまで判断します。</p></div>
+      <span class="plan-chip chip-business">事業最適化</span>
+    </header>
+    <div class="business-pool">
+      <strong>今月のSales Action Cycle プール：10</strong>
+      <div class="pool-bar"><span class="pool-main"></span><span class="pool-station"></span><span class="pool-gift"></span></div>
+      <div class="pool-legend"><span>GALLO本店 4</span><span>駅前店 3</span><span>ギフト工房 3</span></div>
+      <p class="hint">※本店以外の2店舗はBusiness体験用の仮想店舗です。実在店舗として表示していません。</p>
+    </div>
+    <p class="section-label">複数店舗をまとめて判断</p>
+    <div class="store-grid">
+      <div class="biz-store"><small>実店舗サンプル</small><h4>GALLO 本店</h4><p>今月の優先：キャンペーンと来店導線</p><span class="virtual-badge" style="background:#e8f5ef;color:#246b56">REAL SAMPLE</span></div>
+      <div class="biz-store"><small>Business体験用</small><h4>GALLO 駅前店</h4><p>本店で成立した施策を横展開できるか判断</p><span class="virtual-badge">DEMO VIRTUAL</span></div>
+      <div class="biz-store"><small>Business体験用</small><h4>GALLO ギフト工房</h4><p>ギフト用途へ訴求を変えるか判断</p><span class="virtual-badge">DEMO VIRTUAL</span></div>
+    </div>
+    <div class="cross-action">
+      <strong>成功施策の横展開デモ</strong>
+      <div class="cross-flow" style="margin-top:.7rem"><span class="cross-node">本店：施策成立</span><span class="cross-arrow">→</span><span class="cross-node">条件照合</span><span class="cross-arrow">→</span><span class="cross-node">駅前店へ展開候補</span></div>
+      <button class="cta cta-business" id="crossDemo" style="margin-top:.8rem">横展開を判断する</button>
+      <p id="crossResult" class="hint"></p>
+    </div>
+    <div class="upgrade-card" style="background:linear-gradient(135deg,#4d356b,#7151a6)"><h3>Businessの価値は「10回」ではなく「事業を一つとして見る」こと。</h3><p>全店共通施策と店舗別施策を分け、施策が店舗同士で競合しないように調整しながら、結果を事業判断へ戻します。</p><button class="cta" data-goto="alie">ALIEの3エンジンを見る →</button></div>
+  </div>
+</section>
+
+<section class="stage" id="stage-alie">
+  <div class="site-wrap">
+    <header class="stage-head">
+      <div><p class="stage-kicker">ALIE｜3つの共通売上エンジン</p><h2>プログラムを増やすのではなく、3方向を深くする。</h2><p>「何を売るか」「取りこぼしを減らす」「選ばれる理由を強くする」。FreeからBusinessまで、この3つを共通コアとして使います。</p></div>
+      <span class="plan-chip" style="background:var(--ink)">ALIE CORE</span>
+    </header>
+    <div class="alie-core">
+      <div class="engine-grid">
+        <div class="engine"><small>OFFER</small><h3>今、何を売るか</h3><p>商品・サービス・需要を見て、今推す対象と訴求方法を決める。</p></div>
+        <div class="engine"><small>CONVERSION</small><h3>取りこぼしを減らす</h3><p>発見→比較→来店・予約・購入の途中で詰まる一番大きな1点を見る。</p></div>
+        <div class="engine"><small>POSITIONING</small><h3>選ばれる理由を強くする</h3><p>店舗側の自己紹介ではなく、顧客側の言葉から「選ぶ理由」を販促へ変換。</p></div>
+      </div>
+    </div>
+    <p class="section-label">プランごとの使い方</p>
+    <div class="plan-table">
+      <div class="plan-card"><small>FREE</small><h3>体験</h3><div class="price">無料</div><ul><li>3つから1つ選ぶ</li><li>実店舗情報で1回デモ</li><li>公開情報から記事を自動生成</li></ul></div>
+      <div class="plan-card"><small>BASIC</small><h3>毎月一手</h3><div class="price">1,500円/月</div><ul><li>3つ全部をALIEが内部判断</li><li>月1 Sales Action Cycle</li><li>キャンペーン記事・画像を再生成</li><li>ReViewMo選択</li></ul></div>
+      <div class="plan-card"><small>PLUS</small><h3>継続改善</h3><div class="price">3,500円/月</div><ul><li>月5 Sales Action Cycle</li><li>結果を次の判断へ戻す</li><li>Twinow内店舗ページへ蓄積</li></ul></div>
+      <div class="plan-card"><small>BUSINESS</small><h3>事業最適化</h3><div class="price">5,500円/月</div><ul><li>月10 Cycle相当</li><li>複数店舗でプール運用</li><li>店舗横断・事業全体を最適化</li></ul></div>
+    </div>
+    <div class="callout" style="margin-top:1rem"><strong>このデモで伝えたいこと</strong><span>Freeで価値を体験し、Basicで「今売りたいもの」が形になり、Plusで改善が続き、Businessで事業全体へ広がる。ALIEは単なる記事生成AIではなく、次の売上行動を選び続けるAIパートナーです。</span></div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="site-wrap"><strong>Twinow / ついなう！</strong><p>ソーシャルメディアdeイマwoツナグ</p><p>GALLO店舗プラン体験デモ。Business内の仮想店舗・一部キャンペーン内容はデモ表示です。</p></div></footer>
+
+<div class="mobile-next" id="mobileNext"><span id="mobileNextCopy">次は、キャンペーンを反映</span><button id="mobileNextBtn">Basicへ →</button></div>
+
 <script>
-const freeTab=document.getElementById('freeTab'),basicTab=document.getElementById('basicTab'),freeScreen=document.getElementById('freeScreen'),basicScreen=document.getElementById('basicScreen');
-const liveImages=[...document.querySelectorAll('.liveProductImage')];
-let currentImage='assets/gallo-saltbread.jpg',published=false,currentPerson={key:'aina',name:'愛菜 -AiNa-',initial:'愛',img:'assets/aina.svg'};
-function showScreen(mode){const b=mode==='basic';freeTab.classList.toggle('on',!b);basicTab.classList.toggle('on',b);freeScreen.classList.toggle('on',!b);basicScreen.classList.toggle('on',b);window.scrollTo({top:0,behavior:'smooth'})}
-freeTab.onclick=()=>showScreen('free');basicTab.onclick=()=>showScreen('basic');document.getElementById('startBasicSide').onclick=()=>showScreen('basic');
-const photoInput=document.getElementById('photoInput');photoInput.addEventListener('change',()=>{const file=photoInput.files&&photoInput.files[0];if(!file)return;const url=URL.createObjectURL(file);currentImage=url;document.getElementById('uploadPreview').src=url;liveImages.forEach(i=>i.src=url)});
-const purpose=document.getElementById('purpose'),questionPanel=document.getElementById('questionPanel'),questionGrid=document.getElementById('questionGrid'),alieBubble=document.getElementById('alieBubble');
-function esc(v){return String(v||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-function question(id,label,value){return `<div class="qitem"><label for="${id}">${label}</label><input id="${id}" value="${esc(value)}"></div>`}
-document.getElementById('askAlie').onclick=()=>{const t=purpose.value.trim();let qs=[];if(!/(来週|今週|\d{1,2}月|\d{1,2}日|から)/.test(t))qs.push(question('qDate','販売開始はいつですか？','9月30日（水）から'));if(!/\d+\s*円/.test(t))qs.push(question('qPrice','価格はいくらですか？','180円（税込）'));if(!/(北海道産|国産|小麦|バター|特徴|限定)/.test(t))qs.push(question('qFeature','この商品の特徴として、一番伝えたいことは何ですか？','北海道産小麦100％の生地と、焼きたての香ばしさ'));qs.push(question('qNote','数量・時間帯など、来店前に伝えることはありますか？','焼き上がり・売り切れ状況は店頭でご確認ください'));if(qs.length>4)qs=qs.slice(0,4);while(qs.length<2)qs.push(question('qNote','来店前に伝えておきたいことはありますか？','焼き上がり・売り切れ状況は店頭でご確認ください'));questionGrid.innerHTML=qs.join('');alieBubble.textContent=`「${t||'今回の商品をおすすめしたい'}」ですね。写真も確認しました。勝手に補わず、公開に必要な${qs.length}点だけ教えてください。`;questionPanel.classList.add('show');document.getElementById('f2').classList.add('active');questionPanel.scrollIntoView({behavior:'smooth',block:'start'})};
-document.getElementById('backInput').onclick=()=>{document.getElementById('inputPanel').scrollIntoView({behavior:'smooth',block:'start'})};
-function val(id,fallback){const e=document.getElementById(id);return e&&e.value.trim()?e.value.trim():fallback}
-document.getElementById('makePreview').onclick=()=>{const date=val('qDate','来週から'),price=val('qPrice','価格は店頭でご確認ください'),feature=val('qFeature','焼きたての香ばしさを楽しめる塩パン'),note=val('qNote','売り切れ状況は店頭でご確認ください');const title=`${date.includes('来週')?'来週から。':'GALLOから。'}新しい塩パン`;document.getElementById('promoTitle').textContent=title;document.getElementById('promoLead').textContent=`焼きたてパン工房 GALLOから、${date}おすすめする塩パンをご紹介。${feature}。写真と販売情報を一つにまとめ、読んだ人が「今行く理由」まで分かる記事にしました。`;document.getElementById('featureText').textContent=`今回おすすめするのは、${feature}。商品写真と店主から受け取った情報をもとに、Freeの店舗紹介から販促目的の記事へ切り替えています。`;document.getElementById('saleText').textContent=`販売開始：${date} ／ 価格：${price}。${note}`;document.getElementById('storeCampaignTitle').textContent=`${date}、塩パンをおすすめします`;document.getElementById('storeCampaignMeta').textContent=`${price} ／ ${feature}`;document.getElementById('storeArticleTitle').textContent='塩パンのお知らせ';document.getElementById('storeArticleBody').textContent=`${date}、塩パンをおすすめします。${feature}。価格は${price}。${note}`;document.getElementById('previewWrap').classList.add('show');document.getElementById('f3').classList.add('active');applyPerson();document.getElementById('previewWrap').scrollIntoView({behavior:'smooth',block:'start'})};
-const people=[...document.querySelectorAll('.person')];people.forEach(btn=>btn.onclick=()=>{people.forEach(b=>b.classList.remove('on'));btn.classList.add('on');currentPerson={key:btn.dataset.key,name:btn.dataset.name,initial:btn.dataset.initial,img:btn.dataset.img};applyPerson()});
-function applyPerson(){document.getElementById('promoPerson').textContent=`ReViewMo ${currentPerson.name}`;const img=document.getElementById('promoAvatarImg'),txt=document.getElementById('promoAvatarText');if(currentPerson.img){img.src=currentPerson.img;img.classList.remove('hidden');txt.classList.add('hidden')}else{img.classList.add('hidden');txt.textContent=currentPerson.initial;txt.classList.remove('hidden')}const comments={aina:'新しい塩パンが出るなら、焼き上がりを楽しみにしてもらえるように「今行く理由」まで届けます。',hibiki:'店主さんからもらった情報を、迷わず来店判断できる形に整えて届けます。',hinata:'写真から伝わる焼きたて感も含めて、今だから気になる一品として紹介します。',shiori:'お店へ立ち寄る時間までイメージできるように、販売情報を分かりやすくまとめます。',yuika:'商品の特徴と店主さんの言葉が自然に伝わるように、読み手との距離をつなぎます。'};document.getElementById('promoComment').textContent=comments[currentPerson.key]||comments.aina}
-const twinowPreviewTab=document.getElementById('twinowPreviewTab'),storePreviewTab=document.getElementById('storePreviewTab'),twinowPane=document.getElementById('twinowPane'),storePane=document.getElementById('storePane');function showPreview(which){const t=which==='twinow';twinowPreviewTab.classList.toggle('on',t);storePreviewTab.classList.toggle('on',!t);twinowPane.classList.toggle('on',t);storePane.classList.toggle('on',!t)}twinowPreviewTab.onclick=()=>showPreview('twinow');storePreviewTab.onclick=()=>showPreview('store');
-document.getElementById('publishBtn').onclick=()=>{if(published)return;published=true;document.getElementById('remaining').textContent='Basic 今月あと0回';document.getElementById('publishResult').textContent='公開成功。Twinow記事と店舗側の記事を公開し、ここで1回消費しました。';document.getElementById('publishResult').classList.add('ok');document.getElementById('publishBtn').textContent='公開済み';document.getElementById('publishBtn').disabled=true;document.getElementById('previewState').textContent='公開済み';document.getElementById('publishedChip').classList.add('show');document.getElementById('planBadge').textContent='Basic 利用中｜今月あと0回';document.getElementById('basicTab').textContent='2. Basic 公開済み';document.getElementById('f4').classList.add('active');showPreview('store')};
-document.getElementById('resetDemo').onclick=()=>{published=false;purpose.value='来週から、この塩パンをおすすめしたいです。';currentImage='assets/gallo-saltbread.jpg';document.getElementById('uploadPreview').src=currentImage;liveImages.forEach(i=>i.src=currentImage);photoInput.value='';questionPanel.classList.remove('show');document.getElementById('previewWrap').classList.remove('show');['f2','f3','f4'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('remaining').textContent='Basic 今月あと1回';document.getElementById('publishResult').textContent='プレビューでは消費しません。公開成功時だけ1回消費します。';document.getElementById('publishResult').classList.remove('ok');document.getElementById('publishBtn').textContent='この内容で公開する';document.getElementById('publishBtn').disabled=false;document.getElementById('previewState').textContent='公開前・回数未消費';document.getElementById('publishedChip').classList.remove('show');document.getElementById('planBadge').textContent='Free掲載中';document.getElementById('basicTab').textContent='2. Basicを体験する';showPreview('twinow');window.scrollTo({top:0,behavior:'smooth'})};
+(function(){
+  var stageOrder=['free','basic','plus','business','alie'];
+  var nextLabels={
+    free:['次は、キャンペーンを反映','Basicへ →'],
+    basic:['次は、結果を見ながら改善','Plusへ →'],
+    plus:['次は、事業全体を最適化','Businessへ →'],
+    business:['3つの売上エンジン','ALIEを見る →'],
+    alie:['最初から見直す','Freeへ戻る']
+  };
+  function showStage(name){
+    document.querySelectorAll('.stage').forEach(function(s){s.classList.toggle('active',s.id==='stage-'+name)});
+    document.querySelectorAll('.plan-tab').forEach(function(b){b.classList.toggle('active',b.dataset.stage===name)});
+    var idx=stageOrder.indexOf(name), next=idx<stageOrder.length-1?stageOrder[idx+1]:'free';
+    var labels=nextLabels[name];document.getElementById('mobileNextCopy').textContent=labels[0];document.getElementById('mobileNextBtn').textContent=labels[1];document.getElementById('mobileNextBtn').dataset.goto=next;
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.querySelectorAll('[data-stage]').forEach(function(b){b.addEventListener('click',function(){showStage(b.dataset.stage)})});
+  document.querySelectorAll('[data-goto]').forEach(function(b){b.addEventListener('click',function(){showStage(b.dataset.goto)})});
+  document.getElementById('mobileNextBtn').addEventListener('click',function(){showStage(this.dataset.goto)});
+
+  var freePrograms={
+    offer:{title:'Program 1｜今、何を売るか',reason:'公開情報ではパン店としての認知や焼きたてへの言及が確認できます。Freeデモでは、店主入力なしで「何を押し出せるか」を候補化します。',items:['デモ候補：焼きたて感が伝わる商品を主役にする','誰に：近隣でパンを探している人','どこで：Twinow記事・店舗ページの訴求候補へ']},
+    conversion:{title:'Program 2｜売上の取りこぼしを減らす',reason:'公開情報には営業時間、売切れ次第終了、複数の問い合わせ窓口などがあります。来店直前の迷いを減らせるポイントを探します。',items:['候補：営業時間と売切れ情報の確認導線を揃える','候補：来店前に「どこで最新情報を見るか」を明確にする','目的：発見から来店までの迷いを1点減らす']},
+    positioning:{title:'Program 3｜選ばれる理由を強くする',reason:'公開口コミには「小麦の香り」「焼きたて」「生地」への言及があります。店側の自己紹介ではなく、顧客側の言葉を訴求候補へ変換します。',items:['候補訴求：焼きたての香り','候補訴求：生地そのもののおいしさ','記事・SNS・キャンペーンへ同じ軸で展開']}
+  };
+  var freeLocked=false;
+  document.querySelectorAll('#freeProgramGrid .program-card').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(freeLocked)return;
+      document.querySelectorAll('#freeProgramGrid .program-card').forEach(function(b){b.classList.remove('selected')});
+      btn.classList.add('selected');var data=freePrograms[btn.dataset.program],box=document.getElementById('freeAlieResult');
+      box.innerHTML='<strong>'+data.title+'</strong><p class="reason">'+data.reason+'</p><ul>'+data.items.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><button class="cta cta-basic" id="lockFreeProgram" style="margin-top:.8rem">このプログラムで無料デモを実行</button>';
+      box.classList.add('show');
+      document.getElementById('lockFreeProgram').onclick=function(){
+        freeLocked=true;document.querySelectorAll('#freeProgramGrid .program-card').forEach(function(b){if(!b.classList.contains('selected'))b.classList.add('locked')});
+        this.textContent='無料デモ実行済み';this.disabled=true;
+        box.insertAdjacentHTML('beforeend','<p class="reason"><b>残り2方向も継続してALIEに判断させるならBasicへ。</b></p>');
+      };
+    });
+  });
+
+  var selectedPerson={key:'aina',name:'愛菜',roman:'AiNa',img:'https://raw.githubusercontent.com/ankhaurum/Twinow/main/wordpress/themes/twinow-original/assets/reviewmo/approved/twinow_aina_profile_v03.png'};
+  var comments={
+    aina:'今週のおすすめとして届けるなら、焼きたて感と「今行く理由」が同時に伝わるようにまとめます。',
+    hinata:'おでかけの途中で立ち寄りたくなるように、今週ならではの理由を短く分かりやすく届けます。',
+    hibiki:'店主さんの意図と来店前に必要な情報をつないで、迷わず次の行動へ進める形に整えます。',
+    shiori:'日常の中でほっと立ち寄れる時間まで想像できるように、商品の魅力をやわらかく届けます。',
+    yuika:'商品そのものだけでなく、今の気分や暮らしの中で選びたくなる見せ方へ整えます。'
+  };
+  document.querySelectorAll('.reviewmo-choice').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.reviewmo-choice').forEach(function(b){b.classList.remove('selected')});btn.classList.add('selected');
+      selectedPerson={key:btn.dataset.key,name:btn.dataset.name,roman:btn.dataset.roman,img:btn.dataset.img};
+    });
+  });
+  document.getElementById('generateBasic').addEventListener('click',function(){
+    var steps=Array.prototype.slice.call(document.querySelectorAll('.gen-step')),i=0,button=this;
+    button.disabled=true;button.textContent='生成中…';steps.forEach(function(s){s.classList.remove('running','done')});
+    function run(){
+      if(i>0){steps[i-1].classList.remove('running');steps[i-1].classList.add('done')}
+      if(i===steps.length){
+        finishBasic();button.disabled=false;button.textContent='もう一度再生成する';return;
+      }
+      steps[i].classList.add('running');i++;setTimeout(run,380);
+    }
+    run();
+  });
+  function finishBasic(){
+    var copy=document.getElementById('campaignCopy').value.trim()||'今週のおすすめ';
+    var name=document.getElementById('campaignName').value.trim()||'今月のキャンペーン';
+    document.getElementById('coverCopy').textContent=copy;
+    document.getElementById('outputAvatar').src=selectedPerson.img;document.getElementById('outputPerson').textContent=selectedPerson.name+' / '+selectedPerson.roman+' の一言へ反映。';
+    document.getElementById('basicAvatar').src=selectedPerson.img;document.getElementById('basicPerson').textContent='ReViewMo '+selectedPerson.name+' / '+selectedPerson.roman;
+    document.getElementById('basicComment').textContent=comments[selectedPerson.key];
+    document.getElementById('basicArticleTitle').textContent='「'+name.replace('を今週のおすすめにしたい','')+'」を売るための記事';
+    document.getElementById('basicArticleLead').textContent='キャンペーン「'+copy+'」に合わせて、アイキャッチ、本文、ReViewMoの一言を同じ目的へ揃えました。';
+    document.getElementById('basicGenerated').classList.add('show');document.getElementById('basicGenerated').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  var currentCycle=1;
+  document.getElementById('plusNext').addEventListener('click',function(){
+    if(currentCycle>=5){this.textContent='5 Cycle体験済み';this.disabled=true;return}
+    currentCycle++;
+    document.getElementById('plusDone').textContent=currentCycle;
+    document.querySelectorAll('.cycle').forEach(function(c){
+      var n=parseInt(c.dataset.cycle,10);c.classList.remove('active');
+      var state=c.querySelector('.cycle-state');
+      if(n<=currentCycle){c.classList.add('done');state.textContent='実行済み'}
+      else if(n===currentCycle+1){c.classList.add('active');state.textContent='次の一手'}
+      else{state.textContent='待機'}
+    });
+    if(currentCycle===5){this.textContent='5 Cycle体験済み';this.disabled=true}
+  });
+
+  document.getElementById('crossDemo').addEventListener('click',function(){
+    document.getElementById('crossResult').innerHTML='<b>判断結果（デモ）：</b> 本店の施策をそのまま複製せず、駅前店の客層・立地・販売対象を確認してから展開候補にします。Businessは「成功したから全店へコピー」ではなく、条件照合まで含めて事業単位で判断します。';
+    this.textContent='横展開判断済み';this.disabled=true;
+  });
+})();
 </script>
 </body>
 </html>
