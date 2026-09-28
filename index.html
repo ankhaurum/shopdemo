@@ -106,16 +106,16 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
   <div class="wrap owner-zone" style="padding-top:20px">
     <div class="owner-card">
       <span class="eyebrow">BASIC｜月額1,500円</span>
-      <h2>商品画像1枚から、Twinowの記事と3点画像まで自動で。</h2>
-      <p class="value">最初に商品画像を登録したら、商品画像・アイキャッチ・ReViewMoのひとこと画像をまとめて用意。キャンペーンが変わっても同じ商品なら画像はそのまま使い、記事だけ自動で更新します。</p>
-      <div class="capability-strip"><span>今月1商品</span><span>商品画像1枚</span><span>3点画像自動生成</span><span>ReViewMo選択</span><span>記事自動生成</span><span>同一商品は画像再利用</span></div>
+      <h2>商品写真とキャンペーンを決めるだけ。</h2>
+      <p class="value">店主が用意するのは、今月おすすめしたい商品とキャンペーン内容。あとはTwinowの記事まで自動で仕上げます。</p>
+      <div class="capability-strip"><span>今月1商品</span><span>商品写真</span><span>キャンペーン</span><span>ReViewMo選択</span><span>記事を自動作成</span></div>
 
       <div class="form-grid">
         <div>
           <strong>今回販促する商品</strong>
           <div class="single-product-card">
             <img src="https://baby-travel.jp/upload_resources/files/20240718_yakitatepankoubougallo_resize11.jpg" alt="GALLO かめさんメロンパン">
-            <div><b>かめさんメロンパン（カメロン）</b><small>この商品画像を1回登録して、記事・アイキャッチ・ReViewMo画像へ展開</small></div>
+            <div><b>かめさんメロンパン（カメロン）</b><small>今月おすすめする商品</small></div>
           </div>
           <div class="field"><label>キャンペーン内容</label><textarea id="campaign">10月は、見た目もかわいい「かめさんメロンパン」をおすすめしたい。</textarea></div>
           <div class="field"><label>キャンペーン期間</label><input id="campaignPeriod" value="10月1日〜10月31日"></div>
@@ -130,14 +130,14 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
             <button class="person" data-key="shiori" data-name="詩織" data-roman="SiORi" data-img="assets/reviewmo-shiori.jpg"><img src="assets/reviewmo-shiori.jpg" alt="詩織"><b>詩織</b><small>癒し自然・観光</small></button>
             <button class="person" data-key="yuika" data-name="結花" data-roman="YuiKa" data-img="assets/reviewmo-yuika.jpg"><img src="assets/reviewmo-yuika.jpg" alt="結花"><b>結花</b><small>カルチャー・ファッション</small></button>
           </div>
-          <div class="auto-note"><strong>初回だけ3点画像を自動で用意。</strong><span>記事構成はFreeと同じTwinow形式。キャンペーン期間は記事内だけに反映し、アイキャッチ画像には焼き込みません。</span></div>
+          <div class="auto-note"><strong>あとはAIにおまかせ。</strong><span>商品写真とキャンペーン内容をもとに、Twinowの記事と販促用の画像を自動で仕上げます。</span></div>
           <div class="asset-flow" id="assetFlow">
-            <div class="asset-row" data-asset="inline"><b>商品画像</b><span class="asset-state">未生成</span></div>
-            <div class="asset-row" data-asset="featured"><b>アイキャッチ</b><span class="asset-state">未生成</span></div>
-            <div class="asset-row" data-asset="comment"><b>ReViewMoのひとこと画像</b><span class="asset-state">未生成</span></div>
+            <div class="asset-row" data-step="check"><b>商品とキャンペーンを確認</b><span class="asset-state">準備OK</span></div>
+            <div class="asset-row" data-step="article"><b>Twinowの記事を作成</b><span class="asset-state">自動</span></div>
+            <div class="asset-row" data-step="visual"><b>販促用の画像を仕上げる</b><span class="asset-state">自動</span></div>
           </div>
-          <button class="cta" id="buildBasic" style="width:100%">商品画像から3点＋記事を自動生成</button>
-          <div class="reuse-note" id="reuseNote">同じ商品で別期間のキャンペーンを行う場合は、3点画像を再生成せず記事だけ更新します。</div>
+          <button class="cta" id="buildBasic" style="width:100%">この内容でTwinow記事を作る</button>
+          <div class="reuse-note" id="reuseNote">次回も同じ商品なら、キャンペーン内容を変えるだけで更新できます。</div>
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
     <div class="preview" id="basicPreview">
       <div class="beforeafter">
         <div class="ba"><small>FREE</small><b>公開情報から自動掲載</b><p>Twinowの通常記事としてお店を紹介。</p></div>
-        <div class="ba"><small>BASIC</small><b>同じ体裁のまま販促力を追加</b><p>アイキャッチは商品訴求、期間は本文へ。ReViewMoのひとことも商品PR寄りに。</p></div>
+        <div class="ba"><small>BASIC</small><b>同じTwinow記事のまま、今売りたい商品を強く見せる</b><p>キャンペーン内容とReViewMoのコメントが自然に記事へ加わります。</p></div>
       </div>
 
       <div class="article-layout" style="padding-top:0">
@@ -214,7 +214,7 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
 
 <section class="screen" id="screen-plus">
   <div class="wrap owner-zone" style="padding-top:20px">
-    <div class="owner-card"><span class="eyebrow">PLUS｜月額3,500円</span><div class="inherit-box"><strong>Basicの「1商品を自動で販促記事化する」機能はそのまま使えます。</strong><div class="capability-strip"><span>1商品から自動販促</span><span>期間は記事反映</span><span>ReViewMo選択</span><span>記事自動更新</span><span>同一商品は画像再利用</span></div></div><h2>今月の販促を、1回で終わらせない。</h2><p class="value">出した記事の次に、何をすべきかが続いていく。</p><p>月5回まで。同じ商品を別期間でキャンペーンする場合は、既存の3点画像を使ったまま記事だけ自動更新。商品を変えた時だけ新しい画像セットを作ります。</p>
+    <div class="owner-card"><span class="eyebrow">PLUS｜月額3,500円</span><div class="inherit-box"><strong>Basicの自動販促はそのまま使えます。</strong><div class="capability-strip"><span>商品キャンペーン</span><span>ReViewMo選択</span><span>記事を自動作成</span><span>月5回まで</span></div></div><h2>今月の販促を、1回で終わらせない。</h2><p class="value">出した記事の次に、何をすべきかが続いていく。</p><p>月5回まで。前回の販促内容や確認できた反応を見ながら、次のキャンペーンへつなげます。</p>
       <div style="display:flex;align-items:end;justify-content:space-between;gap:10px;margin-top:12px"><div><small>今月の販促</small><br><strong style="font-size:27px"><span id="plusCount">1</span> / 5</strong></div><button class="cta" id="plusNext">次の提案を見る</button></div>
       <div class="promo-list" style="margin-top:12px">
         <div class="promo done" data-n="1"><span class="no">1</span><div><b>かめさんメロンパンのキャンペーン</b><small>記事・画像・店舗ページへ反映</small></div><span class="status">実施済み</span></div>
@@ -234,7 +234,7 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
 
 <section class="screen" id="screen-business">
   <div class="wrap owner-zone" style="padding-top:20px">
-    <div class="owner-card"><span class="eyebrow">BUSINESS｜月額5,500円</span><div class="inherit-box"><strong>Basic・Plusの自動販促機能はすべてそのまま使えます。</strong><div class="capability-strip"><span>自動販促制作</span><span>ReViewMo連動</span><span>月5回の継続改善</span><span>店舗ページ蓄積</span></div></div><h2>複数店舗の販促を、ひとつの画面で。</h2><p class="value">どの店に何を出すかを、事業全体で見られる。</p><p>月10回分を目安に、店舗ごとの状況を見ながら使い分けます。</p>
+    <div class="owner-card"><span class="eyebrow">BUSINESS｜月額5,500円</span><div class="inherit-box"><strong>Basic・Plusの機能はそのまま使えます。</strong><div class="capability-strip"><span>キャンペーン作成</span><span>ReViewMo選択</span><span>継続改善</span><span>店舗ページ</span></div></div><h2>複数店舗の販促を、ひとつの画面で。</h2><p class="value">どの店に何を出すかを、事業全体で見られる。</p><p>月10回分を目安に、店舗ごとの状況を見ながら使い分けます。</p>
       <div class="business-grid" style="margin-top:14px"><div class="store"><small>焼きたてパン工房 GALLO</small><h3>本店</h3><p>今月：商品キャンペーンと来店前情報を優先</p></div><div class="store"><small>追加店舗</small><h3>サンプル店舗1</h3><p>本店で良かった見せ方を使えるか確認</p><span class="sample">サンプル</span></div><div class="store"><small>追加店舗</small><h3>サンプル店舗2</h3><p>客層や販売内容に合わせて別の訴求を検討</p><span class="sample">サンプル</span></div></div>
     </div>
     <div class="owner-card"><span class="eyebrow">店舗をまたいで活かす</span><h2>本店で良かった内容を、そのままコピーせず別店舗向けに作り直す。</h2><p>商品・立地・お客様の違いを確認し、使える部分だけを次の販促候補として出します。</p><button class="cta" id="spread">別店舗でも使えるか確認する</button><div class="result" id="spreadResult"></div></div>
@@ -282,18 +282,19 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
   document.querySelectorAll('#peoplePicker .person').forEach(btn=>btn.onclick=()=>{
     document.querySelectorAll('#peoplePicker .person').forEach(x=>x.classList.remove('on'));btn.classList.add('on');
     person={key:btn.dataset.key,name:btn.dataset.name,roman:btn.dataset.roman,img:btn.dataset.img};
-    if(typeof basicImageSetReady!=='undefined' && basicImageSetReady){document.getElementById('buildBasic').textContent='選んだReViewMoで3点画像を再生成';}
+    if(typeof basicImageSetReady!=='undefined' && basicImageSetReady){document.getElementById('buildBasic').textContent='選んだReViewMoで記事を作る';}
   });
 
   let basicImageSetReady=false;
   let imageSetReviewer='aina';
 
   function markAssetState(mode){
-    document.querySelectorAll('#assetFlow .asset-row').forEach(row=>{
+    const rows=[...document.querySelectorAll('#assetFlow .asset-row')];
+    rows.forEach((row,i)=>{
       row.classList.remove('done','reuse');
       const st=row.querySelector('.asset-state');
-      if(mode==='generated'){row.classList.add('done');st.textContent='生成済み';}
-      if(mode==='reuse'){row.classList.add('reuse');st.textContent='再利用';}
+      if(mode==='generated'){row.classList.add('done');st.textContent=i===0?'確認済み':'完成';}
+      if(mode==='reuse'){row.classList.add('done');st.textContent=i===0?'確認済み':'更新済み';}
     });
   }
 
@@ -306,7 +307,7 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
       basicImageSetReady=true;
       imageSetReviewer=person.key;
       markAssetState('generated');
-      document.getElementById('buildBasic').textContent='同じ商品で記事だけ更新する';
+      document.getElementById('buildBasic').textContent='キャンペーン内容を更新する';
     }else{
       markAssetState('reuse');
     }
@@ -320,8 +321,8 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
     document.getElementById('storePromo').textContent='今月のおすすめ '+PRODUCT_NAME;
     document.getElementById('storePeriod').textContent=period+'｜キャンペーン記事を見る →';
     document.getElementById('reuseNote').textContent=needsImageGeneration
-      ? '商品画像を基準に3点画像を用意しました。次回、同じ商品・同じReViewMoなら画像はそのまま再利用します。'
-      : '同じ商品なので画像は変更していません。キャンペーン内容・期間だけ記事側へ自動反映しました。';
+      ? '記事と販促用の画像ができました。内容を確認して、そのまま公開できます。'
+      : 'キャンペーン内容を更新しました。記事を確認してください。';
     document.getElementById('basicPreview').classList.add('show');
     document.getElementById('basicPreview').scrollIntoView({behavior:'smooth',block:'start'});
   }
