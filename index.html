@@ -151,8 +151,8 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
       <div class="article-layout" style="padding-top:0">
         <article class="main">
           <div class="cover-wrap">
-            <div class="featured"><img src="assets/gallo-basic-aina-generated.jpg" alt="かめさんメロンパンと愛菜のキャンペーンアイキャッチ"></div>
-            <div class="cover-badge" id="coverBadge">今月のおすすめ かめさんメロンパン</div>
+            <div class="featured"><img src="assets/gallo-aina-pr.png" alt="かめさんメロンパンと愛菜のキャンペーンアイキャッチ"></div>
+            <div class="cover-badge" id="coverBadge">今月のおすすめ｜かめさんメロンパン</div>
           </div>
 
           <h1 class="title">焼きたてパン工房 GALLO｜白塚で立ち寄りたい、焼きたてパンのお店</h1>
@@ -174,7 +174,7 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
           <h2>商品を選ぶ楽しみ</h2>
           <p>その日の気分や食事のタイミングに合わせて、店頭でパンを選ぶ時間も町のパン屋を訪ねる楽しみのひとつ。GALLOでは、カメの形をしたメロンパン「カメロン」も紹介されています。</p>
 
-          <div class="reviewmo-shot"><img src="assets/gallo-basic-aina-generated.jpg" alt="愛菜とかめさんメロンパンのReViewMo画像"></div>
+          <div class="reviewmo-shot"><img src="assets/gallo-aina-pr.png" alt="愛菜とかめさんメロンパンのReViewMo画像"></div>
           <p class="reviewmo-line"><b id="reviewmoLabel">ReViewMoのひとこと｜愛菜 -AiNa-：</b> <span id="reviewmoVoice">見た目から楽しい「かめさんメロンパン」。10月1日〜10月31日のデモキャンペーンでは、今月GALLOへ行く理由になる一品として紹介します。3つの表情や味を選ぶ時間まで楽しんでくださいね。</span></p>
 
           <h2>出かける前に確認したいこと</h2>
@@ -312,7 +312,7 @@ footer{display:block;width:100%;max-width:100%;clear:both;background:var(--pink-
       markAssetState('reuse');
     }
 
-    document.getElementById('coverBadge').textContent='今月のおすすめ '+PRODUCT_NAME;
+    document.getElementById('coverBadge').textContent='今月のおすすめ｜'+PRODUCT_NAME;
     document.getElementById('campaignInsert').innerHTML='<strong>今月のおすすめ：</strong> '+period+'のデモキャンペーンでは、「'+PRODUCT_NAME+'（カメロン）」をおすすめ商品として紹介します。';
     document.getElementById('reviewmoLabel').textContent='ReViewMoのひとこと｜'+person.name+' -'+person.roman+'-：';
     document.getElementById('reviewmoVoice').textContent=voices[person.key](PRODUCT_NAME)+' '+period+'のキャンペーン情報は本文とひとことに反映します。';
